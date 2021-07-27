@@ -1,8 +1,8 @@
 header {
   display: flex;
   justify-content: center;
-  background-color: #fff;
-  color: #01d309;
+  background-color: var(--g-bg);
+  color: var(--g-txt-1);
 }
 app-navbar {
   width: 1310px;
@@ -13,8 +13,8 @@ app-navbar {
   display: flex;
   justify-content: center;
   padding: 0;
-  background-color: #fff;
-  color: #24313d;
+  background-color: var(--g-bg);
+  color: var(--g-txt-base);
   min-height: 100vh;
 }
 

@@ -22,21 +22,9 @@ import { AdatkezelesComponent } from './components/office/adatkezeles/adatkezele
 import { ImpresszumComponent } from './components/office/impresszum/impresszum.component';
 import { NaploComponent } from './components/office/naplo/naplo.component';
 import { CookieService } from 'ngx-cookie-service';
-import { TurtleMetodusokInfoComponent } from './components/dok/turtle-metodusok/turtle-metodusok-info/turtle-metodusok-info.component';
-import { MozgasComponent } from './components/dok/turtle-metodusok/mozgas/mozgas.component';
 import { KezdoknekInfoComponent } from './components/kurzus/kezdoknek/kezdoknek-info/kezdoknek-info.component';
 import { ElsoLepesekComponent } from './components/kurzus/kezdoknek/elso-lepesek/elso-lepesek.component';
 import { HaladoknakInfoComponent } from './components/kurzus/haladoknak/haladoknak-info/haladoknak-info.component';
-import { AllapotComponent } from './components/dok/turtle-metodusok/allapot/allapot.component';
-import { TollMetodusokInfoComponent } from './components/dok/toll-metodusok/toll-metodusok-info/toll-metodusok-info.component';
-import { RajzolasComponent } from './components/dok/toll-metodusok/rajzolas/rajzolas.component';
-import { SzinbeallitasComponent } from './components/dok/toll-metodusok/szinbeallitas/szinbeallitas.component';
-import { KitoltesComponent } from './components/dok/toll-metodusok/kitoltes/kitoltes.component';
-import { KepernyoMetodusokInfoComponent } from './components/dok/kepernyo-metodusok/kepernyo-metodusok-info/kepernyo-metodusok-info.component';
-import { AblakComponent } from './components/dok/kepernyo-metodusok/ablak/ablak.component';
-import { AnimacioComponent } from './components/dok/kepernyo-metodusok/animacio/animacio.component';
-import { KepernyoEsemenyekComponent } from './components/dok/kepernyo-metodusok/kepernyo-esemenyek/kepernyo-esemenyek.component';
-import { AdatbevitelComponent } from './components/dok/kepernyo-metodusok/adatbevitel/adatbevitel.component';
 import { BevezetesInfoComponent } from './components/kurzus/bevezetes/bevezetes-info/bevezetes-info.component';
 import { DemoComponent } from './components/kurzus/bevezetes/demo/demo.component';
 import { OnlineComponent } from './components/kurzus/bevezetes/online/online.component';
@@ -44,7 +32,6 @@ import { TanaroknakComponent } from './components/kurzus/bevezetes/tanaroknak/ta
 import { StartComponent } from './components/kurzus/haladoknak/start/start.component';
 import { FejlesztesAlattComponent } from './components/gombok/fejlesztes-alatt/fejlesztes-alatt.component';
 import { FejlesztesDokuComponent } from './components/gombok/fejlesztes-doku/fejlesztes-doku.component';
-import { TurtleEsemenyekComponent } from './components/dok/turtle-metodusok/turtle-esemenyek/turtle-esemenyek.component';
 import { AblakBeallitasComponent } from './components/kurzus/kezdoknek/ablak-beallitas/ablak-beallitas.component';
 import { Race01Component } from './components/kurzus/haladoknak/race01/race01.component';
 import { Race02Component } from './components/kurzus/haladoknak/race02/race02.component';
@@ -121,58 +108,6 @@ const routes: Routes = [
     component: Race04Component,
   },
   {
-    path: 'turtle-metodusok',
-    component: TurtleMetodusokInfoComponent,
-  },
-  {
-    path: 'turtle-metodusok/mozgas',
-    component: MozgasComponent,
-  },
-  {
-    path: 'turtle-metodusok/allapot',
-    component: AllapotComponent,
-  },
-  {
-    path: 'turtle-metodusok/turtle-esemenyek',
-    component: TurtleEsemenyekComponent,
-  },
-  {
-    path: 'toll-metodusok',
-    component: TollMetodusokInfoComponent,
-  },
-  {
-    path: 'toll-metodusok/rajzolas',
-    component: RajzolasComponent,
-  },
-  {
-    path: 'toll-metodusok/szinbeallitas',
-    component: SzinbeallitasComponent,
-  },
-  {
-    path: 'toll-metodusok/kitoltes',
-    component: KitoltesComponent,
-  },
-  {
-    path: 'kepernyo-metodusok',
-    component: KepernyoMetodusokInfoComponent,
-  },
-  {
-    path: 'kepernyo-metodusok/ablak',
-    component: AblakComponent,
-  },
-  {
-    path: 'kepernyo-metodusok/animacio',
-    component: AnimacioComponent,
-  },
-  {
-    path: 'kepernyo-metodusok/kepernyo-esemenyek',
-    component: KepernyoEsemenyekComponent,
-  },
-  {
-    path: 'kepernyo-metodusok/adatbevitel',
-    component: AdatbevitelComponent,
-  },
-  {
     path: 'home',
     component: HomeComponent,
   },
@@ -218,21 +153,9 @@ const routes: Routes = [
     AdatkezelesComponent,
     ImpresszumComponent,
     NaploComponent,
-    TurtleMetodusokInfoComponent,
-    MozgasComponent,
     KezdoknekInfoComponent,
     ElsoLepesekComponent,
     HaladoknakInfoComponent,
-    AllapotComponent,
-    TollMetodusokInfoComponent,
-    RajzolasComponent,
-    SzinbeallitasComponent,
-    KitoltesComponent,
-    KepernyoMetodusokInfoComponent,
-    AblakComponent,
-    AnimacioComponent,
-    KepernyoEsemenyekComponent,
-    AdatbevitelComponent,
     BevezetesInfoComponent,
     DemoComponent,
     OnlineComponent,
@@ -240,7 +163,6 @@ const routes: Routes = [
     StartComponent,
     FejlesztesAlattComponent,
     FejlesztesDokuComponent,
-    TurtleEsemenyekComponent,
     AblakBeallitasComponent,
     Race01Component,
     Race02Component,

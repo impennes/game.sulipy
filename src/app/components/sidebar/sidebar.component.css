@@ -47,6 +47,9 @@ a.active {
   padding-left: 0px;
   font-weight: 700;
 }
+.menu-head {
+  color: var(--g-txt-1);
+}
 
 .unit {
   border: #11323441 1px solid;
