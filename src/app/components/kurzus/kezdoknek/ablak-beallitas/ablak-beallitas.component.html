@@ -1,0 +1,45 @@
+<div class="submenu-title">Ablakbeállítás</div>
+<app-gombsor2 (messageEvent)="receiveMessage($event)"></app-gombsor2>
+
+<div id="video" class="tabcontent">
+  <div id="ytube">
+    <div
+      class="embed-responsive embed-responsive-16by9"
+      style="max-width: 560px"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/h76sfb6_qjc"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="peldak" class="tabcontent">
+  <br />
+  A videóban látható kód
+  <pre><code class="language-python">
+    import turtle
+    import time
+
+    # screen = turtle.Screen()
+    # screen.setup(width=200, height=200, startx=0, starty=0)
+    
+    turtle.setup(width=0.75, height=0.5, startx=10, starty=-10)
+    
+    turtle.bgcolor('blue')
+    turtle.title('Teknőc')
+    turtle.bgpic('teknoc.gif')
+    
+    turtle.forward(300)
+    
+    time.sleep(2)
+    turtle.clear()
+    time.sleep(2)
+  </code></pre>
+</div>

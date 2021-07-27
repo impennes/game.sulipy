@@ -1,0 +1,249 @@
+<div id="sidebar" class="sidebar" *ngIf="!isSmallDevice || sidebarMobileOn">
+  <div id="switcher" *ngIf="!isSmallDevice">
+    Összes almenü {{ toggleText
+    }}<label class="switch">
+      <input type="checkbox" (change)="toggle()" />
+      <i><span class="slider"></span></i>
+    </label>
+  </div>
+  <ul class="menu">
+    <span class="sidebar-title">Tanfolyam</span>
+    <li>
+      <a
+        routerLink="/bevezetes"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><div class="menu-head">
+          Turtle bemutatása<span class="test fas fa-angle-right"></span></div
+      ></a>
+      <ul class="submenu">
+        <li>
+          <a
+            routerLink="/bevezetes/turtledemo"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Turtledemó</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/bevezetes/online"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Online Turtlekód-szerkesztők</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/bevezetes/tanaroknak"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Turtle a Python tanításban</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a
+        routerLink="/kezdoknek"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><div class="menu-head">
+          Kezdőknek<span class="test fas fa-angle-right"></span></div
+      ></a>
+      <ul class="submenu">
+        <li>
+          <a
+            routerLink="/kezdoknek/elso-lepesek"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Első lépések</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/kezdoknek/ablak-beallitas"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Ablakbeállítás</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a
+        routerLink="/haladoknak"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><div class="menu-head">
+          Haladóknak<span class="test fas fa-angle-right"></span></div
+      ></a>
+      <ul class="submenu">
+        <li>
+          <a
+            routerLink="/haladoknak/start"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Indul a Turtle!</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/haladoknak/ablak-beallitas"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Ablakbeállítás</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/haladoknak/race01"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Turtle Race 01</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/haladoknak/race02"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Turtle Race 02</a
+          >
+        </li>
+        <!-- <li>
+          <a
+            routerLink="/haladoknak/race03"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Turtle Race 03</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/haladoknak/race04"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Turtle Race 04</a
+          >
+        </li> -->
+      </ul>
+    </li>
+
+    <span class="sidebar-title" style="margin-top: 40px">Dokumentáció</span>
+
+    <li>
+      <a
+        routerLink="/turtle-metodusok"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><div class="menu-head">
+          Turtle-metódusok<span class="test fas fa-angle-right"></span></div
+      ></a>
+      <ul class="submenu">
+        <li>
+          <a
+            routerLink="/turtle-metodusok/mozgas"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Mozgás</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/turtle-metodusok/allapot"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Állapot</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/turtle-metodusok/turtle-esemenyek"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Turtle-események</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a
+        routerLink="/toll-metodusok"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><div class="menu-head">
+          Tollmetódusok<span class="test fas fa-angle-right"></span></div
+      ></a>
+      <ul class="submenu">
+        <li>
+          <a
+            routerLink="/toll-metodusok/rajzolas"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Rajzolás, írás, törlés</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/toll-metodusok/szinbeallitas"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Színbeállítás</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/toll-metodusok/kitoltes"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Kitöltés</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a
+        routerLink="/kepernyo-metodusok"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><div class="menu-head">
+          Képernyő-metódusok<span class="test fas fa-angle-right"></span></div
+      ></a>
+      <ul class="submenu">
+        <li>
+          <a
+            routerLink="/kepernyo-metodusok/ablak"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Ablakbeállítások</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/kepernyo-metodusok/animacio"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Animációk</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/kepernyo-metodusok/kepernyo-esemenyek"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Képernyő-események</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/kepernyo-metodusok/adatbevitel"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Adatbevitel</a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+.link-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: #adb2b6 1px solid;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #24313d;
+}
+
+.link-container:hover {
+  background-color: rgb(239, 255, 246);
+}

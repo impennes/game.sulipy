@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+
+:root {
+  /* --brand-color: #1b6c32; */
+  --bg-color: #fff;
+  --p1-text-color: #ffdc53;
+  /* --primary-dark-color: #1b6c32;
+  --primary-light-color: #a7cca6; */
+  /* --text-color: #e1e3e3; */
+  --text-color: #01d309;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  /* color: #95b1c0;
+  background-color: var(--bg-color); */
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.menu-title {
+  background-color: #113234;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submenu-title {
+  background-color: #113234;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  padding: 12px 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.content {
+  padding: 0px 20px;
+}
+
+.hl {
+  /* background: #366e9d; */
+  background-color: #738080;
+  border-radius: 5px;
+  padding: 1px 5px;
+  color: #1e415d;
+  font-weight: 700;
+}
+
+.text a {
+  color: var(--primary-dark-color);
+  font-weight: 700;
+}
+
+hr {
+  border-color: #ebf2f22e !important;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-title {
+    padding: 15px 15px;
+  }
+  .submenu-title {
+    padding: 15px 15px;
+  }
+}
+
+/* ------------------ Tanítási egységek ------------------ */
+
+.tabcontent {
+  margin-top: 20px;
+  padding: 20px;
+  display: none;
+}
+
+.tabcontent ul {
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 0px 0px;
+  }
+  .tabcontent {
+    padding: 5px;
+  }
+}
+
+/* -------------------- Videó --------------------- */
+iframe {
+  border-radius: 5px;
+}
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive::before {
+  display: block;
+  content: "";
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
+}
+.embed-responsive-4by3::before {
+  padding-top: 75%;
+}
+#ytube {
+  display: flex;
+  justify-content: center;
+}
+
+.navigator {
+  color: var(--primary-dark-color);
+}
+.navigator:hover {
+  cursor: pointer;
+}
+
+.youtube-video {
+  margin-top: 30px;
+}
+
+.subtitle {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.subtitle-txt {
+  width: 560px;
+  text-align: center;
+}
+
+/* -------------------- Turtle code --------------------- */
+.t-code {
+  font-family: Consolas;
+  padding-left: 20px;
+  background-color: rgb(239, 255, 246);
+  border-radius: 5px;
+}
+
+/* -------------------- Turtle dokumentációs fejezetek nyitó oldala --------------------- */
+.motivacio {
+  font-size: 1.2rem;
+  display: block;
+  text-align: center;
+}
+
+.valasz-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.valasz-2 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  background-color: rgb(239, 255, 246);
+  padding: 15px 25px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+/* -------------------- Turtle dokumentáció aloldala --------------------- */
+.soon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 40px 0px;
+}
+.soon a {
+  border: #01d309 1px solid;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #1a8da1;
+  color: #fff;
+}
+
+.soon a:hover {
+  background-color: #113234;
+}
+
+/* -------------------- Próbld ki! gomb --------------------- */
+.try-it {
+  display: flex;
+  justify-content: flex-end;
+}
+.try-it a button {
+  background-color: #1e415d;
+  border: #ffd243 1px solid;
+  border-radius: 5px;
+  box-shadow: rgb(78, 78, 78) 0px 3px 5px inset;
+  color: #ffd243;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+}
+.try-it a button:hover,
+.try-it a button:active {
+  background-color: #366e9d;
+  cursor: pointer;
+}
+/* --------------------------- Footer tartalom ---------------- */
+.office-title {
+  background-color: #95b1c0;
+  color: #1e415d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.office-box {
+  padding: 0px 20px;
+  color: #95b1c0;
+}
+
+@media screen and (max-width: 600px) {
+  .office-box {
+    padding: 0px 0px;
+  }
+}
+
+span.py {
+  color: rgb(128, 203, 206);
+  font-family: "Inconsolata", monospace;
+  font-size: 18px;
+}

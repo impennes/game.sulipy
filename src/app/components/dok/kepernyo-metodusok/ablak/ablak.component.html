@@ -1,0 +1,85 @@
+<div class="submenu-title">Ablakbeállítások</div>
+
+<div>
+  <b>Ablak mérete, pozíciója</b>
+  <div class="t-code">
+    turtle.setup(width=_CFG["width"], height=_CFG["height"],
+    startx=_CFG["leftright"], starty=_CFG["topbottom"]<br /><br />
+    Az alapértelemezett értékek a konfigurációs könyvtárban vannak tárolva, és a
+    turtle.cfg fájlban módosíthatóak. <br /><br />
+    width: ha egész szám, akkor pixelben, ha tizedes tört akkor a képernyőméret
+    százalékában határozza meg az abalak méretét; alapértelmezett nagyság a
+    képernyő 50%-a <br />
+    height: ha egész szám, akkor pixelben, ha tizedes tört akkor a képernyőméret
+    százalékában határozza meg az abalak méretét; alapértelmezett nagyság a
+    képernyő 75%-a <br />
+    startx: ha pozitív szám, akkor a képernyő bal szélétől, ha negatív szám,
+    akkor a képernyő jobb szélétől pixelben határozza meg az ablak pozícióját,
+    ha None, akkor vízszintesen középen helyezkedik el <br />
+    starty: ha pozitív szám, akkor a képernyő tetejétől, ha negatív szám, akkor
+    a képernyő aljától pixelben határozza meg az ablak pozícióját, ha None,
+    akkor függőlegesen középen helyezkedik el <br />
+  </div>
+  <pre><code class="language-python">
+    # 200 x 200 pixel méretű abalak, amelynek pozíciója a képernyő bal felső sarka
+    # screen objektum létrehozásával:
+    screen = tutrle.Screen()
+    screen.setup(width=200, height=200, startx=0, starty=0)
+
+    # de így is működik
+    turtle.setup(width=200, height=200, startx=0, starty=0)
+
+    # szélessége a képernyőméret 75%-a, magassága a képernyőméret 50%-a, pozíciója: középre igazított
+    turtle.setup(width=.75, height=0.5, startx=None, starty=None)
+    </code></pre>
+  <br /><b>Bejárható terület beállítása</b>
+  <div class="t-code">
+    turtle.screensize(canvwidth=None, canvheight=None, bg=None)<br />
+    canvwidth(szélesség): pozitív egész, szélesség pixelben megadva <br />
+    canvheight(magasság): pozitív egész, magasság pixelben megadva <br />
+    bg(háttérszín): szín-sztring vagy RGB tuple a háttérszín értéknek <br />
+    nincs argumentum: az aktuális értékkel tér vissza <br />
+  </div>
+  A teknős által bejárható terület nagyságát határozza meg, DE az ablakméret
+  változtalan marad, az ablakméreten túli területek csak görgetéssel válnak
+  láthatóvá! <br />
+  <br /><b>Ablakcím</b>
+  <div class="t-code">
+    turtle.title(titlestring)<br />
+    titlestring: az ablak a címsorában megjelenítésre kerülő cím
+  </div>
+  <br /><b>Háttérszín</b>
+  <div class="t-code">
+    turtle.bgcolor(*args)<br />
+    args: szín-sztring vagy 3 RGB szám vagy RGB-tuple <br />
+    nincs argumentum: az aktuális értékkel tér vissza
+  </div>
+  <br /><b>Háttérkép</b>
+  <div class="t-code">
+    turtle.bgpic(picname=None)<br />
+    picname: a gif fájl neve, vagy "nopic" - törli a háttérképet, vagy None - a
+    fájl nevével tér vissza<br />
+    nincs argumentum: az aktuális értékkel tér vissza
+  </div>
+  <br /><b>Ablak alaphelyzetbe való állítása</b>
+  <div class="t-code">
+    turtle.clear() <br />
+    turtle.clearscreen()<br />
+    nincs argumentum: az aktuális értékkel tér vissza <br />
+  </div>
+  Töröl minden rajzot és Turtle-t a képernyőről. Visszaállítja az ablak
+  kiindulási értékeit: fehér háttér, nincs háttérkép, nincs esemény
+  regisztrálva. <br />
+  <br /><b>Turtle alaphelyzetbe való állítása</b>
+  <div class="t-code">
+    turtle.reset() <br />
+    turtle.resetscreen()<br />
+  </div>
+  Minden Turtle-t alaphelyzetbe állít.<br />
+  <br /><b>Ablak bezárása</b>
+  <div class="t-code">
+    turtle.bye()<br />
+    Bezárja az ablakot.<br />
+  </div>
+  <br /><br />
+</div>

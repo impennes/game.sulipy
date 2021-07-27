@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "etlap-7d540": {
+      "hosting": {
+        "tabla": [
+          "etlap-7d540"
+        ]
+      }
+    },
+    "menza-57386": {
+      "hosting": {
+        "tabla": [
+          "menza-57386"
+        ]
+      }
+    }
+  }
+}

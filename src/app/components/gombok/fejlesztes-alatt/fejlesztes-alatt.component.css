@@ -1,0 +1,19 @@
+.social-box {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+.social-txt {
+  text-align: center;
+  width: 90%;
+}
+.social-txt a {
+  border: #24313d 1px solid;
+  color: #ef306a;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.social-txt a:hover {
+  color: #24313d;
+}

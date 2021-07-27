@@ -1,0 +1,19 @@
+.motivacio {
+  font-size: 1.2rem;
+  display: block;
+  text-align: center;
+}
+
+.valasz-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.valasz-2 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  background-color: rgb(239, 255, 246);
+  padding: 15px 25px;
+  font-weight: 700;
+  border-radius: 5px;
+}

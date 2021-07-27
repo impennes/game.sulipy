@@ -1,0 +1,84 @@
+<div class="submenu-title">Első lépések</div>
+<app-gombsor4 (messageEvent)="receiveMessage($event)"></app-gombsor4>
+
+<div id="video" class="tabcontent">
+  <div id="ytube">
+    <div
+      class="embed-responsive embed-responsive-16by9"
+      style="max-width: 560px"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/sGXS89nUqlw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <!-- <div class="subtitle">
+    <div class="subtitle-txt">
+      A videó leírásában tartalomjegyzéket találsz időpont megjelöléssel. <br />
+      Ha az időpontra kattintasz, az adott résztől indul a videó.
+    </div>
+  </div> -->
+</div>
+
+<div id="peldak" class="tabcontent">
+  <pre><code class="language-python">
+  import turtle
+
+  turtle.forward(150)
+  </code></pre>
+  <br />
+  Négyzet rajzolása
+  <pre><code class="language-python">
+  import turtle
+
+  turtle.forward(150)
+  turtle.left(90)
+  turtle.forward(150)
+  turtle.left(90)
+  turtle.forward(150)
+  turtle.left(90)
+  turtle.forward(150)
+  turtle.left(90)
+  </code></pre>
+
+  <br /><br />
+  A videóban látható kód
+  <pre><code class="language-python">
+  import turtle
+
+  turtle.shape("turtle")
+  turtle.pen(fillcolor="red", pencolor="yellow", pensize=10)
+  turtle.speed(1)
+  turtle.begin_fill()
+  turtle.forward(150)
+  turtle.left(90)
+  turtle.forward(150)
+  turtle.goto(0,0)
+  turtle.left(90)
+  turtle.forward(150)
+  turtle.left(90)
+  turtle.forward(150)
+  turtle.home()
+  turtle.end_fill()
+  </code></pre>
+</div>
+
+<div id="feladatok" class="tabcontent">
+  <b>1. Feladat</b><br />
+  Állítsd be, hogy látható legyen a teknőc alak! <br />
+  A teknőc rajzoljon kék színnel egy ötszöget, amit sárga színnel töltsön ki!
+  <br /><br />
+  <hr />
+  <b>2. Feladat</b><br />
+  Rajzolj szaggatott vonalakkal körülhatárolt négyzetet!
+  <br /><br /><br />
+  <hr />
+  <b>3. Feladat</b><br />
+  Rajzolj egyik csúcsán álló téglalapot!
+</div>

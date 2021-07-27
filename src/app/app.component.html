@@ -1,0 +1,31 @@
+<header>
+  <app-navbar></app-navbar>
+</header>
+<main>
+  <div class="page-container">
+    <app-sidebar></app-sidebar>
+    <article>
+      <router-outlet></router-outlet>
+    </article>
+  </div>
+</main>
+<!-- <footer>
+  <app-footer></app-footer>
+</footer> -->
+
+<div class="cbox">
+  <div class="cookie-box">
+    <div class="cookie-txt">
+      A jobb felhasználói élmény érdekében és statisztikai célból az oldal
+      sütiket használ. Az oldal használatával hozzájárul ehhez.
+    </div>
+    <div class="button-container">
+      <a href="/footer/adatkezeles"
+        ><div class="cookie-button">További információk</div></a
+      >
+      <div (click)="onClick()" class="cookie-button cookie-button-allow">
+        Elfogadom
+      </div>
+    </div>
+  </div>
+</div>

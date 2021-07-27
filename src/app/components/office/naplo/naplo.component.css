@@ -1,0 +1,31 @@
+.subt {
+  /* color: #1e415d;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0); */
+  padding: 5px 10px;
+  border: 1px solid #95b1c0;
+  border-radius: 5px;
+}
+.naplo-box {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.datum {
+  margin-right: 20px;
+  min-width: 150px;
+}
+
+.spacer {
+  height: 80px;
+}
+
+@media screen and (max-width: 600px) {
+  .naplo-box {
+    display: block;
+    margin: 30px 0px;
+  }
+  .datum {
+    max-width: 200px;
+    font-weight: 700;
+  }
+}

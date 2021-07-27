@@ -1,0 +1,69 @@
+.nav-container {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: relative;
+  z-index: 4;
+  align-items: center;
+  display: flex;
+}
+.logo {
+  width: 350px;
+}
+
+.nav-right {
+  padding-left: 20px;
+  width: 940px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link a {
+  margin-right: 40px;
+  font-weight: 700;
+  color: #24313d;
+  padding: 5px 20px;
+  border: solid 1px #01d309;
+  border-radius: 5px;
+}
+
+.link a:hover {
+  background-color: #01d309;
+  color: #24313d;
+  border-radius: 5px;
+}
+
+.icons i {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+/* Mobile version */
+.nav-container-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobil-logo {
+  margin-left: 20px;
+}
+.mobil-menu-icon {
+  margin-right: 20px;
+  font-size: 2rem;
+}
+.mobil-menu-icon:hover {
+  cursor: pointer;
+}
+
+/*  -------     SuliPY      ------- */
+
+.link a.erettsegi {
+  background-color: #24313d;
+  color: #ef306a;
+  border: unset;
+  letter-spacing: 1.8px;
+}
+
+.link a.erettsegi:hover {
+  color: #01d309;
+}

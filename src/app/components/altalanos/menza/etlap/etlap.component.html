@@ -1,0 +1,33 @@
+<div class="submenu-title">Étlap</div>
+
+<div class="tcontainer">
+  <div class="ticker-wrap">
+    <div class="ticker-move">
+      <div class="ticker-item">
+        A következő heti étlap már csütörtöktől olvasható itt ...
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="unit" *ngFor="let item of items | async">
+  <div *ngIf="validator(item.nap)">
+    <div class="day">{{ item.nap }}</div>
+    <div class="ebed">
+      <div class="etelek">
+        <div class="etel" *ngFor="let subitem of item.etelek | keyvalue">
+          <div class="nev">{{ subitem.value.nev }}</div>
+          <div class="allergen">{{ subitem.value.allergen }}</div>
+        </div>
+      </div>
+      <div class="energia">{{ item.energia }}</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isSupportedBrowser" class="firefox">
+  Sajnos <b>Firefox</b> és <b>Safari</b> böngészőben jelenleg nem tudjuk
+  megjeníteni az étlapot! Dolgozunk a megoldáson... <br /><br />
+  <b>Chrome</b>, <b>Edge</b> vagy <b>Opera</b> böngészőben viszont jól
+  olvasható.
+</div>
+<!-- <div *ngIf="!validData">Sajnáljuk nincs megjeleneíthető adat ...</div> -->
