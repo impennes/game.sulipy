@@ -23,7 +23,7 @@
   font-weight: 700;
   color: var(--g-txt-1);
   padding: 5px 20px;
-  border: solid 1px #01d309;
+  border: solid 1px var(--g-bg-secondary);
   border-radius: 5px;
 }
 

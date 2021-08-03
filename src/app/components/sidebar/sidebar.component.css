@@ -10,7 +10,7 @@
   /* margin-top: 20px; */
   padding: 20px 10px;
   font-weight: 400;
-  border-bottom: 1px solid #ebf2f2;
+  border-bottom: 1px solid var(--g-bg-secondary);
 }
 #switcher label {
   margin-left: 82px;
@@ -28,8 +28,8 @@ a:hover {
   padding: 5px 10px;
 }
 a.active {
-  background-color: #24313d;
-  color: #01d309;
+  background-color: var(--g-bg-secondary);
+  color: var(--g-bg);
   border-radius: 5px;
   padding: 5px 10px;
 }

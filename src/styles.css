@@ -4,7 +4,10 @@
 :root {
   --g-bg: #1e1e1e;
   --g-txt-1: #007acd;
+  --g-txt-1: #bda188;
   --g-txt-base: #bbcac9;
+  --g-bg-secondary: #63b0aa;
+  --g-hover: #cdd6d6cb;
   /* --brand-color: #1b6c32; */
   --bg-color: #fff;
   --p1-text-color: #ffdc53;
@@ -29,8 +32,8 @@ a {
 }
 
 .menu-title {
-  background-color: #113234;
-  color: var(--text-color);
+  background-color: var(--g-bg-secondary);
+  color: var(--g-bg);
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
@@ -41,8 +44,8 @@ a {
 }
 
 .submenu-title {
-  background-color: #113234;
-  color: var(--text-color);
+  background-color: var(--g-bg-secondary);
+  color: var(--g-bg);
   font-size: 1.2rem;
   font-weight: 700;
   text-align: center;

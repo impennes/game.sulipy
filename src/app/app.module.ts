@@ -37,6 +37,7 @@ import { Race01Component } from './components/kurzus/haladoknak/race01/race01.co
 import { Race02Component } from './components/kurzus/haladoknak/race02/race02.component';
 import { Race03Component } from './components/kurzus/haladoknak/race03/race03.component';
 import { Race04Component } from './components/kurzus/haladoknak/race04/race04.component';
+import { GombsorTesztComponent } from './components/gombok/gombsor-teszt/gombsor-teszt.component';
 
 const routes: Routes = [
   {
@@ -168,6 +169,7 @@ const routes: Routes = [
     Race02Component,
     Race03Component,
     Race04Component,
+    GombsorTesztComponent,
   ],
   imports: [
     BrowserModule,
