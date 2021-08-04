@@ -1,0 +1,54 @@
+<div class="submenu-title">Képek a játékban</div>
+<app-gombsor3 (messageEvent)="receiveMessage($event)"></app-gombsor3>
+
+<div id="video" class="tabcontent">
+  <div id="ytube">
+    <div
+      class="embed-responsive embed-responsive-16by9"
+      style="max-width: 560px"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/TWQ3CmybaUY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="peldak" class="tabcontent">
+  <pre><code class="language-python">
+  import pygame
+
+  pygame.init()
+  screen = pygame.display.set_mode((600, 300))
+  pygame.display.set_caption('Alapok')
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+      pygame.display.update()
+  
+  pygame.quit()    
+  </code></pre>
+</div>
+
+<div id="feladatok" class="tabcontent">
+  <b>1. Feladat</b><br />
+  Készítsd el azt a videóban bemutatott programalapot, amelyben a sys modult is
+  importáljuk a program befejezéséhez!
+
+  <br /><br />
+  <hr />
+  <b>2. Feladat</b><br />
+  A videóban látható módon írasd ki a konzolablakba az éppen aktuális eseményt
+  (event-et)! Válassz különböző ablakméretet, vizsgáld meg az egér pozíciójával
+  az abalakméret változását!
+  <br /><br /><br />
+</div>

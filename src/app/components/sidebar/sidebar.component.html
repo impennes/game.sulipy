@@ -42,90 +42,83 @@
         </li>
       </ul>
     </li>
+
     <li>
       <a
-        routerLink="/kezdoknek"
+        routerLink="/alapok"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         ><div class="menu-head">
-          Kezdőknek<span class="test fas fa-angle-right"></span></div
+          Alapok<span class="test fas fa-angle-right"></span></div
       ></a>
       <ul class="submenu">
         <li>
           <a
-            routerLink="/kezdoknek/elso-lepesek"
+            routerLink="/alapok/elso_program"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Első lépések</a
+            >Első program</a
           >
         </li>
         <li>
           <a
-            routerLink="/kezdoknek/ablak-beallitas"
+            routerLink="/alapok/szinkezeles"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Ablakbeállítás</a
+            >Színek használata</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/alapok/rajzolas"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Rajzolás</a
           >
         </li>
       </ul>
     </li>
     <li>
       <a
-        routerLink="/haladoknak"
+        routerLink="/animacio"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         ><div class="menu-head">
-          Haladóknak<span class="test fas fa-angle-right"></span></div
+          Animáció<span class="test fas fa-angle-right"></span></div
       ></a>
       <ul class="submenu">
         <li>
           <a
-            routerLink="/haladoknak/start"
+            routerLink="/animacio/mozgas"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Indul a Turtle!</a
+            >Elemek mozgása</a
           >
         </li>
         <li>
           <a
-            routerLink="/haladoknak/ablak-beallitas"
+            routerLink="/animacio/kep"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Ablakbeállítás</a
+            >Képek</a
           >
         </li>
         <li>
           <a
-            routerLink="/haladoknak/race01"
+            routerLink="/animacio/rect"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Turtle Race 01</a
+            >Rect</a
           >
         </li>
         <li>
           <a
-            routerLink="/haladoknak/race02"
+            routerLink="/animacio/mozgasfazisok"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Turtle Race 02</a
+            >Mozgásfázisok</a
           >
         </li>
-        <!-- <li>
-          <a
-            routerLink="/haladoknak/race03"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Turtle Race 03</a
-          >
-        </li>
-        <li>
-          <a
-            routerLink="/haladoknak/race04"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Turtle Race 04</a
-          >
-        </li> -->
       </ul>
     </li>
   </ul>

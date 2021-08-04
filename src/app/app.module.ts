@@ -22,22 +22,23 @@ import { AdatkezelesComponent } from './components/office/adatkezeles/adatkezele
 import { ImpresszumComponent } from './components/office/impresszum/impresszum.component';
 import { NaploComponent } from './components/office/naplo/naplo.component';
 import { CookieService } from 'ngx-cookie-service';
-import { KezdoknekInfoComponent } from './components/kurzus/kezdoknek/kezdoknek-info/kezdoknek-info.component';
-import { ElsoLepesekComponent } from './components/kurzus/kezdoknek/elso-lepesek/elso-lepesek.component';
-import { HaladoknakInfoComponent } from './components/kurzus/haladoknak/haladoknak-info/haladoknak-info.component';
 import { BevezetesInfoComponent } from './components/kurzus/bevezetes/bevezetes-info/bevezetes-info.component';
 import { DemoComponent } from './components/kurzus/bevezetes/demo/demo.component';
 import { OnlineComponent } from './components/kurzus/bevezetes/online/online.component';
 import { TanaroknakComponent } from './components/kurzus/bevezetes/tanaroknak/tanaroknak.component';
-import { StartComponent } from './components/kurzus/haladoknak/start/start.component';
 import { FejlesztesAlattComponent } from './components/gombok/fejlesztes-alatt/fejlesztes-alatt.component';
 import { FejlesztesDokuComponent } from './components/gombok/fejlesztes-doku/fejlesztes-doku.component';
-import { AblakBeallitasComponent } from './components/kurzus/kezdoknek/ablak-beallitas/ablak-beallitas.component';
-import { Race01Component } from './components/kurzus/haladoknak/race01/race01.component';
-import { Race02Component } from './components/kurzus/haladoknak/race02/race02.component';
-import { Race03Component } from './components/kurzus/haladoknak/race03/race03.component';
-import { Race04Component } from './components/kurzus/haladoknak/race04/race04.component';
 import { GombsorTesztComponent } from './components/gombok/gombsor-teszt/gombsor-teszt.component';
+import { AlapokInfoComponent } from './components/kurzus/alapok/alapok-info/alapok-info.component';
+import { ElsoProgramComponent } from './components/kurzus/alapok/elso-program/elso-program.component';
+import { SzinkezelesComponent } from './components/kurzus/alapok/szinkezeles/szinkezeles.component';
+import { RajzolasComponent } from './components/kurzus/alapok/rajzolas/rajzolas.component';
+import { Gombsor3Component } from './components/gombok/gombsor3/gombsor3.component';
+import { AnimacioInfoComponent } from './components/kurzus/animacio/animacio-info/animacio-info.component';
+import { MozgasComponent } from './components/kurzus/animacio/mozgas/mozgas.component';
+import { KepComponent } from './components/kurzus/animacio/kep/kep.component';
+import { RectComponent } from './components/kurzus/animacio/rect/rect.component';
+import { MozgasfazisokComponent } from './components/kurzus/animacio/mozgasfazisok/mozgasfazisok.component';
 
 const routes: Routes = [
   {
@@ -69,44 +70,40 @@ const routes: Routes = [
     component: TanaroknakComponent,
   },
   {
-    path: 'kezdoknek',
-    component: KezdoknekInfoComponent,
+    path: 'alapok',
+    component: AlapokInfoComponent,
   },
   {
-    path: 'kezdoknek/elso-lepesek',
-    component: ElsoLepesekComponent,
+    path: 'alapok/elso_program',
+    component: ElsoProgramComponent,
   },
   {
-    path: 'kezdoknek/ablak-beallitas',
-    component: AblakBeallitasComponent,
+    path: 'alapok/szinkezeles',
+    component: SzinkezelesComponent,
   },
   {
-    path: 'haladoknak',
-    component: HaladoknakInfoComponent,
+    path: 'alapok/rajzolas',
+    component: RajzolasComponent,
   },
   {
-    path: 'haladoknak/start',
-    component: StartComponent,
+    path: 'animacio',
+    component: AnimacioInfoComponent,
   },
   {
-    path: 'haladoknak/ablak-beallitas',
-    component: AblakBeallitasComponent,
+    path: 'animacio/mozgas',
+    component: MozgasComponent,
   },
   {
-    path: 'haladoknak/race01',
-    component: Race01Component,
+    path: 'animacio/kep',
+    component: KepComponent,
   },
   {
-    path: 'haladoknak/race02',
-    component: Race02Component,
+    path: 'animacio/rect',
+    component: RectComponent,
   },
   {
-    path: 'haladoknak/race03',
-    component: Race03Component,
-  },
-  {
-    path: 'haladoknak/race04',
-    component: Race04Component,
+    path: 'animacio/mozgasfazisok',
+    component: MozgasfazisokComponent,
   },
   {
     path: 'home',
@@ -154,22 +151,23 @@ const routes: Routes = [
     AdatkezelesComponent,
     ImpresszumComponent,
     NaploComponent,
-    KezdoknekInfoComponent,
-    ElsoLepesekComponent,
-    HaladoknakInfoComponent,
     BevezetesInfoComponent,
     DemoComponent,
     OnlineComponent,
     TanaroknakComponent,
-    StartComponent,
     FejlesztesAlattComponent,
     FejlesztesDokuComponent,
-    AblakBeallitasComponent,
-    Race01Component,
-    Race02Component,
-    Race03Component,
-    Race04Component,
     GombsorTesztComponent,
+    AlapokInfoComponent,
+    ElsoProgramComponent,
+    SzinkezelesComponent,
+    RajzolasComponent,
+    Gombsor3Component,
+    AnimacioInfoComponent,
+    MozgasComponent,
+    KepComponent,
+    RectComponent,
+    MozgasfazisokComponent,
   ],
   imports: [
     BrowserModule,

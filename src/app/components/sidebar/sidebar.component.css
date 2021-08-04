@@ -21,9 +21,11 @@ a {
   display: block;
   padding: 5px 10px;
 }
+
 a:hover {
-  background-color: #126372;
-  color: #fff;
+  /* background-color: #126372; */
+  background-color: #585a5a;
+  color: rgb(232, 233, 235);
   border-radius: 5px;
   padding: 5px 10px;
 }
@@ -32,6 +34,12 @@ a.active {
   color: var(--g-bg);
   border-radius: 5px;
   padding: 5px 10px;
+}
+.menu-head {
+  color: var(--g-txt-1);
+}
+a.active .menu-head {
+  color: var(--g-bg);
 }
 
 .sidebar-title {
@@ -46,9 +54,6 @@ a.active {
   list-style: none;
   padding-left: 0px;
   font-weight: 700;
-}
-.menu-head {
-  color: var(--g-txt-1);
 }
 
 .unit {

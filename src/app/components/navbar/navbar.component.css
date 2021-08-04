@@ -31,6 +31,11 @@
   background-color: #01d309;
   color: #24313d;
   border-radius: 5px;
+  box-shadow: inset rgb(68, 67, 67) 0px 0px 15px;
+}
+
+.link a:active {
+  box-shadow: inset rgb(68, 67, 67) 0px 0px 15px;
 }
 
 .icons i {
@@ -58,9 +63,10 @@
 /*  -------     SuliPY      ------- */
 
 .link a.erettsegi {
-  background-color: #24313d;
+  background-color: #387eb8;
   color: #ef306a;
-  border: unset;
+  color: #ffe052;
+  /* border: unset; */
   letter-spacing: 1.8px;
 }
 

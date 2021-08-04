@@ -1,0 +1,94 @@
+<div class="submenu-title">Színek használata</div>
+<app-gombsor3 (messageEvent)="receiveMessage($event)"></app-gombsor3>
+
+<div id="video" class="tabcontent">
+  <div id="ytube">
+    <div
+      class="embed-responsive embed-responsive-16by9"
+      style="max-width: 560px"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/TWQ3CmybaUY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="peldak" class="tabcontent">
+  <pre><code class="language-python">
+  import pygame
+
+  pygame.init()
+  screen = pygame.display.set_mode((600, 300))
+  pygame.display.set_caption('Színek')
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+      
+      # ablak háttérszínének beállítása sztringgel
+      screen.fill('yellow')
+      # RGB értékkel tuple-ként megadva
+      # screen.fill((125, 125, 0))
+      
+      pygame.display.update()
+  
+  pygame.quit()
+  </code></pre>
+  <br /><br />
+  Az "r" gomb lenyomására pirosra, a "g" gomb lenyomására zöldre változik az
+  ablak háttérszíne:
+  <pre><code class="language-python">
+  import pygame
+
+  pygame.init()
+
+  GRAY = (127, 127, 127)
+  RED = (255, 0, 0)
+  GREEN = (0, 255, 0)
+
+  screen = pygame.display.set_mode((600, 300))
+  pygame.display.set_caption('Színváltó')
+  background = GRAY
+
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+          if event.type == pygame.KEYDOWN:
+              if event.key == pygame.K_r:
+                  background = RED
+              elif event.key == pygame.K_g:
+                  background = GREEN
+
+      screen.fill(background)
+      pygame.display.update()
+
+  pygame.quit()
+  </code></pre>
+</div>
+
+<div id="feladatok" class="tabcontent">
+  <b>1. Feladat</b><br />
+  Alakítsd át a "Példák" fülön elérhető második kódot úgy, hogy az abalak címe
+  mutassa az éppen aktuális szín RGB értékét (pl. "Az ablak háttérszínének RGB
+  értéke: (0, 255, 0)"!
+
+  <br /><br />
+  <hr />
+  <b>2. Feladat</b><br />
+  Módosítsd a fenti programot úgy, hogy egy szótár típusú változó tárolja
+  kulcsként a billenytű kódját, és a hozzátartozó érték pedig egy RGB kódót
+  tartalamzó konstans legyen! Legalább 4 különböző háttérszínt lehessen
+  választani!
+  <br /><br /><br />
+</div>
