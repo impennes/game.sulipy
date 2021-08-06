@@ -5,9 +5,11 @@
   --g-bg: #1e1e1e;
   --g-txt-1: #007acd;
   --g-txt-1: #bda188;
+  --g-txt-1: #fde2a7;
   --g-txt-base: #bbcac9;
   --g-bg-secondary: #63b0aa;
-  --g-hover: #cdd6d6cb;
+  --g-bg-secondary: #1de5f5;
+  --g-button-off: #cdd6d6cb;
   /* --brand-color: #1b6c32; */
   --bg-color: #fff;
   --p1-text-color: #ffdc53;

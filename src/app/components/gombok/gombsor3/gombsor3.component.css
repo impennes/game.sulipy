@@ -2,11 +2,12 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .button {
   flex-grow: 1;
   flex-basis: 150px;
   margin: 5px 5px;
-  background-color: var(--g-hover);
+  background-color: rgb(59, 147, 187);
   border: var(--bg-color) 3px solid;
   border-radius: 5px;
   /* box-shadow: #3b3b3b 5px 5px 1px; */
