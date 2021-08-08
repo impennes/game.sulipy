@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  border: #adb2b6 1px solid;
-  border-radius: 5px;
-  padding: 10px 20px;
-  color: #24313d;
 }
 
-.link-container:hover {
-  background-color: rgb(239, 255, 246);
+.link-container .icon {
+  margin-right: 20px;
+  align-self: baseline;
+}
+
+.link-container .description {
+  color: var(--g-txt-base);
 }

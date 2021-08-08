@@ -1,14 +1,13 @@
 .title {
-  background-color: #24313d;
-  /* background-color: #113234; */
-  border-radius: 5px;
+  background-color: var(--g-bg-secondary);
+  color: var(--g-bg);
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 2em;
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px 50px;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 30px 50px;
-  text-align: center;
-  color: #01d309;
 }
 .text {
   text-align: center;
@@ -22,8 +21,8 @@
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   margin: 20px;
 }
@@ -67,16 +66,26 @@
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: #24313d;
+  background-color: var(--g-bg);
   color: black;
 }
 
 /* Style the back side */
 .flip-card-back {
   background-color: #24313d;
+  background-color: var(--g-bg);
   color: white;
   transform: rotateY(180deg);
   border-radius: 15px;
+  display: flex;
+  align-items: center;
 }
+.ready {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--g-txt-1);
+}
+
 .social-box {
   display: flex;
   justify-content: center;
@@ -118,16 +127,20 @@
   }
   .card-container-mobile {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: 15px 0px;
   }
   .card-container-mobile img {
-    height: 60px;
-    width: auto;
+    height: auti;
+    width: 90%;
     margin-right: 10px;
   }
-  .card-container-mobile .text-container .sub-title {
-    color: #01d309;
+  .card-container-mobile .text-container {
+    color: var(--g-txt-1);
+    font-size: 1.5rem;
+    margin: 20px 0px 40px 0px;
   }
   .align-right .text-container {
     text-align: right;

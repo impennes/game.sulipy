@@ -1,0 +1,65 @@
+.game-box {
+  position: relative;
+  /* border: chartreuse 1px solid;*/
+}
+
+@keyframes move {
+  0% {
+    left: 0%;
+    bottom: 0;
+  }
+  40% {
+    left: 90%;
+    bottom: 0;
+  }
+  50% {
+    left: 90%;
+    bottom: 78%;
+  }
+  90% {
+    left: 0%;
+    bottom: 78%;
+  }
+  100% {
+    left: 0%;
+    bottom: 0;
+  }
+}
+
+#ghost {
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  height: 40px;
+  animation-name: move;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes life {
+  0% {
+    height: 0px;
+  }
+  40% {
+    height: 40px;
+  }
+  41% {
+    height: 0px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+#health {
+  position: absolute;
+  left: 90%;
+  bottom: 0;
+  display: block;
+  height: 0px;
+  animation-name: life;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+}

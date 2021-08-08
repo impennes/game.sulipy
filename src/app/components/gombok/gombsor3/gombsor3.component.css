@@ -55,7 +55,13 @@
     margin: 4px 4px;
     max-width: 120px;
   }
+  .button:nth-child(3) {
+    max-width: 140px;
+  }
   .button:hover {
     font-size: 16px;
+  }
+  .icon {
+    height: 32px;
   }
 }

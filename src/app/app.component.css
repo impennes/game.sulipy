@@ -19,7 +19,7 @@ app-navbar {
 }
 
 article {
-  min-height: 10vh;
+  min-height: 80vh;
   width: 940px;
   /* border: 1px solid greenyellow; */
   padding: 0px 20px;

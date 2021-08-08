@@ -28,8 +28,8 @@
 }
 
 .link a:hover {
-  background-color: #01d309;
-  color: #24313d;
+  background-color: var(--g-bg-secondary);
+  color: var(--g-bg);
   border-radius: 5px;
   box-shadow: inset rgb(68, 67, 67) 0px 0px 15px;
 }
@@ -39,8 +39,13 @@
 }
 
 .icons i {
+  color: var(--g-txt-1);
   font-size: 2rem;
   margin-right: 10px;
+}
+
+.icons i:hover {
+  color: var(--g-bg-secondary);
 }
 
 /* Mobile version */
@@ -63,9 +68,9 @@
 /*  -------     SuliPY      ------- */
 
 .link a.erettsegi {
-  background-color: #387eb8;
-  color: #ef306a;
+  background-color: var(--g-bg);
   color: #ffe052;
+  color: #ef306a;
   /* border: unset; */
   letter-spacing: 1.8px;
 }

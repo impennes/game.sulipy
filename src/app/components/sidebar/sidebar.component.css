@@ -116,13 +116,13 @@ a.active .menu-head {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #01d309;
+  background-color: var(--g-bg-secondary);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + i .slider {
-  background-color: white;
+  background-color: #24313d;
 }
 
 input:focus + i .slider {
