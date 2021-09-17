@@ -1,4 +1,4 @@
-<div class="submenu-title">Elemek mozgása</div>
+<div class="submenu-title">Mozgás és időzítés</div>
 <app-gombsor3 (messageEvent)="receiveMessage($event)"></app-gombsor3>
 
 <div id="video" class="tabcontent">
@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/TWQ3CmybaUY"
+        src="https://www.youtube.com/embed/my3ra3lK0UU"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -18,38 +18,90 @@
       ></iframe>
     </div>
   </div>
+  <div class="space"></div>
+  <a href="https://opengameart.org/" target="_blank"
+    ><div class="link-container">
+      <div class="icon">
+        <img src="./../../../assets/images/g-flag.svg" alt="" />
+      </div>
+      <div class="description">
+        <b>OpenGameArt</b> <br />
+        Egy honlap, amely különböző felhasználási feltételekkel biztosít
+        ingyenesen letölthető képcsomagokat (háttér, karakter, egyéb játékelemek
+        ...), hanganyagokat.
+      </div>
+    </div></a
+  >
+
+  <a href="https://kenney.nl/assets?q=2d" target="_blank"
+    ><div class="link-container">
+      <div class="icon">
+        <img src="./../../../assets/images/g-flag.svg" alt="" />
+      </div>
+      <div class="description">
+        <b>Kenney</b> <br />
+        Egy honlap, amely ingyenesen kínál 2D és 3D képcsomagokat,
+        hanganyagokat.
+      </div>
+    </div></a
+  >
+
+  <a href="https://www.gameart2d.com/freebies.html" target="_blank"
+    ><div class="link-container">
+      <div class="icon">
+        <img src="./../../../assets/images/g-flag.svg" alt="" />
+      </div>
+      <div class="description">
+        <b>Game Art 2d</b> <br />
+        Egy honlap, amely ingyenesen is kínál 2D képcsomagokat.
+      </div>
+    </div></a
+  >
 </div>
 
 <div id="peldak" class="tabcontent">
   <pre><code class="language-python">
   import pygame
 
+  WIDTH, HEIGHT = 600, 300
+  BLUE = (0, 0, 255)
+  BG_COLOR = (127, 127, 127)
+  
   pygame.init()
-  screen = pygame.display.set_mode((600, 300))
-  pygame.display.set_caption('Alapok')
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  rect_pos_x = 10
+  rect_pos_y = 20
+  
+  clock = pygame.time.Clock()
   
   running = True
   while running:
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
               running = False
-      pygame.display.update()
   
-  pygame.quit()    
+      screen.fill(BG_COLOR)
+      rect_pos_x += 5
+      rect_pos_y += 2
+      rect = pygame.Rect(rect_pos_x, rect_pos_y, 100, 50)
+      pygame.draw.rect(screen, BLUE, rect)
+      pygame.display.update()
+      clock.tick(60)
+  
+  pygame.quit()
   </code></pre>
 </div>
 
 <div id="feladatok" class="tabcontent">
   <b>1. Feladat</b><br />
-  Készítsd el azt a videóban bemutatott programalapot, amelyben a sys modult is
-  importáljuk a program befejezéséhez!
+  A videóban bemutatott kódot, amely a Példák részben leölthető, alakítsd át
+  úgy, hogy a téglalap csak a játékablak széléig mozgjon, de azt ne hagyja el!
 
   <br /><br />
   <hr />
   <b>2. Feladat</b><br />
-  A videóban látható módon írasd ki a konzolablakba az éppen aktuális eseményt
-  (event-et)! Válassz különböző ablakméretet, vizsgáld meg az egér pozíciójával
-  az abalakméret változását!
+  Rajzolj egy alakzatot a játékablak bal felső, egyet pedig a jobb felső
+  sarkába. A két alakzat átlósan mozogjon lefelé, de egyik se hagyja el a
+  játékablak területét!
   <br /><br /><br />
 </div>
-<p>mozgas works!</p>

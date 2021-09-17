@@ -1,3 +1,6 @@
+.space {
+  min-height: 70px;
+}
 .link-container {
   display: flex;
   align-items: center;
