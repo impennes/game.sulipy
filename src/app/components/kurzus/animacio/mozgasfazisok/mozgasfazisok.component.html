@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/TWQ3CmybaUY"
+        src="https://www.youtube.com/embed/_IpH1e_Bb1s"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -24,16 +24,43 @@
   <pre><code class="language-python">
   import pygame
 
-  pygame.init()
-  screen = pygame.display.set_mode((600, 300))
-  pygame.display.set_caption('Alapok')
+  WIDTH, HEIGHT = 800, 400
+  BG_COLOR = (140, 137, 246)
+  BIRD_SPEED = 5
   
+  pygame.init()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  bird_surf_1 = pygame.image.load('img/bird1.png').convert_alpha()
+  bird_surf_2 = pygame.image.load('img/bird2.png').convert_alpha()
+  bird_surf_3 = pygame.image.load('img/bird3.png').convert_alpha()
+  bird_surf_4 = pygame.image.load('img/bird4.png').convert_alpha()
+  bird_surf = [bird_surf_1, bird_surf_2, bird_surf_3, bird_surf_4]
+  
+  bird_index = 0
+  bird_rect = bird_surf[bird_index].get_rect(midleft=(0, HEIGHT / 2))
+  
+  counter = 0
   running = True
   while running:
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
               running = False
+  
+      screen.fill(BG_COLOR)
+  
+      counter += 1
+      if counter % 7 == 0:
+          bird_index += 1
+      if bird_index > len(bird_surf) -1:
+          bird_index = 0
+   
+      if bird_rect.right <= WIDTH:
+          bird_rect.left += BIRD_SPEED
+      screen.blit(bird_surf[bird_index], bird_rect)
       pygame.display.update()
+      clock.tick(60)
   
   pygame.quit()    
   </code></pre>
@@ -41,14 +68,11 @@
 
 <div id="feladatok" class="tabcontent">
   <b>1. Feladat</b><br />
-  Készítsd el azt a videóban bemutatott programalapot, amelyben a sys modult is
-  importáljuk a program befejezéséhez!
+  A <a [routerLink]="['/linkek']" target="_blink">Hasznos linkek</a> részben
+  több olyan weboldalt is találsz, ahonnan ingyenesen letölthetsz karaktereket.
+  Válassz ki olyat, amely több mozgásfázissal is rendelkezik, és használd fel
+  ezeket az animációban! Alkalmazz háttérképe(ke)t is!
 
   <br /><br />
-  <hr />
-  <b>2. Feladat</b><br />
-  A videóban látható módon írasd ki a konzolablakba az éppen aktuális eseményt
-  (event-et)! Válassz különböző ablakméretet, vizsgáld meg az egér pozíciójával
-  az abalakméret változását!
   <br /><br /><br />
 </div>

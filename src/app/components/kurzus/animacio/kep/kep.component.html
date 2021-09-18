@@ -1,4 +1,4 @@
-<div class="submenu-title">Képek a játékban</div>
+<div class="submenu-title">Képek megjelenítése és mozgatása</div>
 <app-gombsor3 (messageEvent)="receiveMessage($event)"></app-gombsor3>
 
 <div id="video" class="tabcontent">
@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/TWQ3CmybaUY"
+        src="https://www.youtube.com/embed/EFNANHiqeNs"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -24,31 +24,37 @@
   <pre><code class="language-python">
   import pygame
 
+  WIDTH, HEIGHT = 800, 400
+  BG_COLOR = (140, 137, 246)
+  BIRD_SPEED = 5
+  
   pygame.init()
-  screen = pygame.display.set_mode((600, 300))
-  pygame.display.set_caption('Alapok')
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  bird_surf = pygame.image.load('img/bird1.png').convert_alpha()
+  bird_x = 0
+  bird_y = 200
   
   running = True
   while running:
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
               running = False
-      pygame.display.update()
   
-  pygame.quit()    
+      screen.fill(BG_COLOR)
+      bird_x += BIRD_SPEED
+      screen.blit(bird_surf, (bird_x, bird_y))
+      pygame.display.update()
+      clock.tick(60)
+  
+  pygame.quit()
   </code></pre>
 </div>
 
 <div id="feladatok" class="tabcontent">
   <b>1. Feladat</b><br />
-  Készítsd el azt a videóban bemutatott programalapot, amelyben a sys modult is
-  importáljuk a program befejezéséhez!
+  Fejleszd tovább a videóban bemutatott - és a Példák részben letölthető - kódot
+  úgy, hogy a madár ne repüljön ki a képernyő jobb oldalán!
 
   <br /><br />
-  <hr />
-  <b>2. Feladat</b><br />
-  A videóban látható módon írasd ki a konzolablakba az éppen aktuális eseményt
-  (event-et)! Válassz különböző ablakméretet, vizsgáld meg az egér pozíciójával
-  az abalakméret változását!
-  <br /><br /><br />
 </div>

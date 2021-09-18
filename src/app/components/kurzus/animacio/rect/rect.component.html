@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/TWQ3CmybaUY"
+        src="https://www.youtube.com/embed/eJALNy-KGK4"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -24,31 +24,83 @@
   <pre><code class="language-python">
   import pygame
 
+  WIDTH, HEIGHT = 800, 400
+  BG_COLOR = (140, 137, 246)
+  BIRD_SPEED = 5
+  
   pygame.init()
-  screen = pygame.display.set_mode((600, 300))
-  pygame.display.set_caption('Alapok')
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  bird_surf = pygame.image.load('img/bird1.png').convert_alpha()
+  bird_rect = bird_surf.get_rect(midleft=(0, HEIGHT / 2))
   
   running = True
   while running:
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
               running = False
+  
+      screen.fill(BG_COLOR)
+  
+      if bird_rect.right <= WIDTH:
+          bird_rect.left += BIRD_SPEED
+      screen.blit(bird_surf, bird_rect)
       pygame.display.update()
+      clock.tick(60)
   
   pygame.quit()    
   </code></pre>
+  <br />
+  Amikor a madár eléri a képernyőt, megfordul, és úgy repül visszafelé:
+  <pre><code class="language-python">
+  import pygame
+
+  WIDTH, HEIGHT = 800, 400
+  BG_COLOR = (140, 137, 246)
+  BIRD_SPEED = 5
+  
+  pygame.init()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  bird_surf = pygame.image.load('img/bird1.png').convert_alpha()
+  bird_rect = bird_surf.get_rect(midleft=(0, HEIGHT / 2))
+  bird_forward = True
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+  
+      screen.fill(BG_COLOR)
+  
+      if bird_rect.right < WIDTH and bird_forward:
+          bird_rect.left += BIRD_SPEED
+      elif bird_rect.right == WIDTH:
+          bird_forward = False
+          bird_surf = pygame.image.load('img/bird1back.png').convert_alpha()
+          bird_rect = bird_surf.get_rect(midright=(WIDTH - 1, HEIGHT / 2))
+      else:
+          bird_rect.left -= BIRD_SPEED
+  
+      screen.blit(bird_surf, bird_rect)
+      pygame.display.update()
+      clock.tick(60)
+  
+    pygame.quit()    
+    </code></pre>
 </div>
 
 <div id="feladatok" class="tabcontent">
   <b>1. Feladat</b><br />
-  Készítsd el azt a videóban bemutatott programalapot, amelyben a sys modult is
-  importáljuk a program befejezéséhez!
+  Fejleszd tovább a videó második részében elkészített - és a Példák részben
+  letölthető - kódot úgy, hogy amikor a madár ismét eléri a képernyő jobb
+  szélét, újra megfordul, és így repül tovább. Tehát a madár folyamatosan repked
+  a képernyő két széle között mindig a megfelelő irányba nézve!
 
   <br /><br />
-  <hr />
-  <b>2. Feladat</b><br />
-  A videóban látható módon írasd ki a konzolablakba az éppen aktuális eseményt
-  (event-et)! Válassz különböző ablakméretet, vizsgáld meg az egér pozíciójával
-  az abalakméret változását!
+
   <br /><br /><br />
 </div>
