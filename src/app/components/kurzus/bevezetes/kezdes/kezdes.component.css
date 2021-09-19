@@ -1,0 +1,21 @@
+.question {
+  border: 1px solid var(--g-bg-secondary);
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 0 20px 0;
+  color: var(--g-txt-1);
+}
+
+.answer {
+  margin-bottom: 50px;
+}
+
+a {
+  color: var(--g-red);
+}
+
+span {
+  letter-spacing: 1.8px;
+  font-weight: bold;
+  color: var(--g-red);
+}

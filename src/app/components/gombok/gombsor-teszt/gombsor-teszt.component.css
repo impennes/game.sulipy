@@ -1,20 +1,19 @@
 .button-line {
-  padding: 0 25%;
   display: flex;
   flex-wrap: wrap;
 }
+
 .button {
   flex-grow: 1;
-  /* flex-basis: 150px; */
-  flex-basis: 50px;
+  flex-basis: 150px;
   margin: 5px 5px;
-  background-color: var(--g-hover);
-  border: var(--bg-color) 3px solid;
+  /* background-color: rgb(59, 147, 187); */
+  border: var(--g-bg-secondary) 1px solid;
   border-radius: 5px;
-  /* height: 50px; */
-  height: 70px;
+  /* box-shadow: #3b3b3b 5px 5px 1px; */
+  /* min-width: 150px; */
+  height: 50px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 5px 10px;
@@ -26,15 +25,10 @@
   font-size: 18px;
   font-weight: 900;
 }
-.button:active {
-  background-color: var(--g-bg-secondary);
-}
+
 .active {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
-  border: var(--bg-color) 3px solid;
-  background-color: var(--g-bg-secondary);
-  /* box-shadow: rgb(161, 161, 161) 0px 3px 2px; */
-  box-shadow: inset rgb(68, 67, 67) 0px 0px 15px;
+  border: var(--g-bg-secondary) 1px solid;
+  box-shadow: inset rgb(70, 171, 202) 0px 0px 30px;
 }
 .icon {
   height: 32px;
@@ -42,9 +36,12 @@
   margin-left: 10px;
 }
 .button-text {
-  color: var(--g-bg);
+  color: var(--g-txt-1);
   text-align: center;
   flex-grow: 1;
+}
+.active .button-text {
+  color: var(--g-red);
 }
 
 @media screen and (max-width: 600px) {
@@ -57,7 +54,13 @@
     margin: 4px 4px;
     max-width: 120px;
   }
+  .button:nth-child(3) {
+    max-width: 140px;
+  }
   .button:hover {
     font-size: 16px;
+  }
+  .icon {
+    height: 32px;
   }
 }

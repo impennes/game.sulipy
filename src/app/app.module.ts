@@ -23,9 +23,6 @@ import { ImpresszumComponent } from './components/office/impresszum/impresszum.c
 import { NaploComponent } from './components/office/naplo/naplo.component';
 import { CookieService } from 'ngx-cookie-service';
 import { BevezetesInfoComponent } from './components/kurzus/bevezetes/bevezetes-info/bevezetes-info.component';
-import { DemoComponent } from './components/kurzus/bevezetes/demo/demo.component';
-import { OnlineComponent } from './components/kurzus/bevezetes/online/online.component';
-import { TanaroknakComponent } from './components/kurzus/bevezetes/tanaroknak/tanaroknak.component';
 import { FejlesztesAlattComponent } from './components/gombok/fejlesztes-alatt/fejlesztes-alatt.component';
 import { FejlesztesDokuComponent } from './components/gombok/fejlesztes-doku/fejlesztes-doku.component';
 import { GombsorTesztComponent } from './components/gombok/gombsor-teszt/gombsor-teszt.component';
@@ -39,6 +36,7 @@ import { MozgasComponent } from './components/kurzus/animacio/mozgas/mozgas.comp
 import { KepComponent } from './components/kurzus/animacio/kep/kep.component';
 import { RectComponent } from './components/kurzus/animacio/rect/rect.component';
 import { MozgasfazisokComponent } from './components/kurzus/animacio/mozgasfazisok/mozgasfazisok.component';
+import { KezdesComponent } from './components/kurzus/bevezetes/kezdes/kezdes.component';
 
 const routes: Routes = [
   {
@@ -58,16 +56,8 @@ const routes: Routes = [
     component: BevezetesInfoComponent,
   },
   {
-    path: 'bevezetes/turtledemo',
-    component: DemoComponent,
-  },
-  {
-    path: 'bevezetes/online',
-    component: OnlineComponent,
-  },
-  {
-    path: 'bevezetes/tanaroknak',
-    component: TanaroknakComponent,
+    path: 'bevezetes/kezdes',
+    component: KezdesComponent,
   },
   {
     path: 'alapok',
@@ -122,10 +112,6 @@ const routes: Routes = [
     component: NaploComponent,
   },
   {
-    path: 'footer/tanaroknak',
-    component: TanaroknakComponent,
-  },
-  {
     path: 'footer/adatkezeles',
     component: AdatkezelesComponent,
   },
@@ -152,9 +138,6 @@ const routes: Routes = [
     ImpresszumComponent,
     NaploComponent,
     BevezetesInfoComponent,
-    DemoComponent,
-    OnlineComponent,
-    TanaroknakComponent,
     FejlesztesAlattComponent,
     FejlesztesDokuComponent,
     GombsorTesztComponent,
@@ -168,6 +151,7 @@ const routes: Routes = [
     KepComponent,
     RectComponent,
     MozgasfazisokComponent,
+    KezdesComponent,
   ],
   imports: [
     BrowserModule,
