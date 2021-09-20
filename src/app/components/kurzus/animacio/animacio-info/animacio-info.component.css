@@ -1,3 +1,7 @@
+ul li {
+  margin-bottom: 10px;
+}
+
 .game-box {
   position: relative;
   /* border: chartreuse 1px solid;*/

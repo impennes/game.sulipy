@@ -37,6 +37,11 @@ import { KepComponent } from './components/kurzus/animacio/kep/kep.component';
 import { RectComponent } from './components/kurzus/animacio/rect/rect.component';
 import { MozgasfazisokComponent } from './components/kurzus/animacio/mozgasfazisok/mozgasfazisok.component';
 import { KezdesComponent } from './components/kurzus/bevezetes/kezdes/kezdes.component';
+import { FeliratokComponent } from './components/kurzus/animacio/feliratok/feliratok.component';
+import { IranyitasInfoComponent } from './components/kurzus/iranyitas/iranyitas-info/iranyitas-info.component';
+import { BillentyuzetComponent } from './components/kurzus/iranyitas/billentyuzet/billentyuzet.component';
+import { UtkozesComponent } from './components/kurzus/iranyitas/utkozes/utkozes.component';
+import { EgerComponent } from './components/kurzus/iranyitas/eger/eger.component';
 
 const routes: Routes = [
   {
@@ -96,6 +101,26 @@ const routes: Routes = [
     component: MozgasfazisokComponent,
   },
   {
+    path: 'animacio/feliratok',
+    component: FeliratokComponent,
+  },
+  {
+    path: 'iranyitas',
+    component: IranyitasInfoComponent,
+  },
+  {
+    path: 'iranyitas/billentyuzet',
+    component: BillentyuzetComponent,
+  },
+  {
+    path: 'iranyitas/utkozes',
+    component: UtkozesComponent,
+  },
+  {
+    path: 'iranyitas/eger',
+    component: EgerComponent,
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
@@ -152,6 +177,11 @@ const routes: Routes = [
     RectComponent,
     MozgasfazisokComponent,
     KezdesComponent,
+    FeliratokComponent,
+    IranyitasInfoComponent,
+    BillentyuzetComponent,
+    UtkozesComponent,
+    EgerComponent,
   ],
   imports: [
     BrowserModule,

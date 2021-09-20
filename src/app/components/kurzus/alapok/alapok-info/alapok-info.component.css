@@ -1,3 +1,7 @@
+ul li {
+  margin-bottom: 10px;
+}
+
 @keyframes move {
   0% {
     margin-left: 0%;
