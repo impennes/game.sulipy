@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/EFNANHiqeNs"
+        src="https://www.youtube.com/embed/SrYF6yMs8n8"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -18,61 +18,31 @@
       ></iframe>
     </div>
   </div>
-  <div class="space"></div>
-  <a href="https://opengameart.org/" target="_blank"
-    ><div class="link-container">
-      <div class="icon">
-        <img src="./../../../assets/images/g-flag.svg" alt="" />
-      </div>
-      <div class="description">
-        <b>OpenGameArt</b> <br />
-        Egy honlap, amely különböző felhasználási feltételekkel biztosít
-        ingyenesen letölthető képcsomagokat (háttér, karakter, egyéb játékelemek
-        ...), hanganyagokat.
-      </div>
-    </div></a
-  >
-
-  <a href="https://kenney.nl/assets?q=2d" target="_blank"
-    ><div class="link-container">
-      <div class="icon">
-        <img src="./../../../assets/images/g-flag.svg" alt="" />
-      </div>
-      <div class="description">
-        <b>Kenney</b> <br />
-        Egy honlap, amely ingyenesen kínál 2D és 3D képcsomagokat,
-        hanganyagokat.
-      </div>
-    </div></a
-  >
-
-  <a href="https://www.gameart2d.com/freebies.html" target="_blank"
-    ><div class="link-container">
-      <div class="icon">
-        <img src="./../../../assets/images/g-flag.svg" alt="" />
-      </div>
-      <div class="description">
-        <b>Game Art 2d</b> <br />
-        Egy honlap, amely ingyenesen is kínál 2D képcsomagokat.
-      </div>
-    </div></a
-  >
 </div>
 
 <div id="peldak" class="tabcontent">
   <pre><code class="language-python">
   import pygame
 
-  WIDTH, HEIGHT = 800, 400
+  WIDTH, HEIGHT = 1280, 620
   BG_COLOR = (140, 137, 246)
-  BIRD_SPEED = 5
+  FONT_COLOR = (255, 255, 255)
   
   pygame.init()
   screen = pygame.display.set_mode((WIDTH, HEIGHT))
-  clock = pygame.time.Clock()
-  bird_surf = pygame.image.load('img/bird1.png').convert_alpha()
-  bird_x = 0
-  bird_y = 200
+  
+  # 1. font objektum létrehozása
+  game_font = pygame.font.Font(None, 60)
+  # 2. a feliratot tartalmazó réteg létrehozása
+  text_surf = game_font.render('GAME', True, FONT_COLOR)
+  # 3. Rect obejktum létrehozása
+  text_rect = text_surf.get_rect(center=(WIDTH / 2, HEIGHT / 2))
+  
+  fonts = pygame.font.get_fonts()
+  print(len(fonts))
+  for f in fonts:
+      print(f)
+  
   
   running = True
   while running:
@@ -81,19 +51,67 @@
               running = False
   
       screen.fill(BG_COLOR)
-      bird_x += BIRD_SPEED
-      screen.blit(bird_surf, (bird_x, bird_y))
+      # 4. réteg megjelenítése
+      screen.blit(text_surf, text_rect)
       pygame.display.update()
-      clock.tick(60)
+  
+  pygame.quit()
+  </code></pre>
+  <br /><br />
+  Gyakorlati példa (játékidő, pontszám megjelenítése)
+  <pre><code class="language-python">
+  import pygame
+  import time
+  
+  WIDTH, HEIGHT = 1280, 620
+  BG_COLOR = (140, 137, 246)
+  FONT_COLOR = (255, 255, 255)
+  
+  pygame.init()
+  time_start = time.time()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  game_font = pygame.font.SysFont('arial', 60)
+  text_surf = game_font.render('GAME', True, FONT_COLOR)
+  text_rect = text_surf.get_rect(center=(WIDTH / 2, HEIGHT / 2))
+  
+  score = 0
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+          if event.type == pygame.KEYDOWN:
+              score += 1
+  
+      game_time = str(int(time.time() - time_start))
+      time_surf = game_font.render('SEC: ' + game_time, True, FONT_COLOR)
+      time_rect = time_surf.get_rect(topright=(WIDTH - 10, 10))
+  
+      score_surf = game_font.render('SCORE: ' + str(score), True, FONT_COLOR)
+      score_rect = score_surf.get_rect(topleft=(10, 10))
+  
+      screen.fill(BG_COLOR)
+      screen.blit(time_surf, time_rect)
+      screen.blit(score_surf, score_rect)
+      screen.blit(text_surf, text_rect)
+      pygame.display.update()
+      clock.tick(30)
   
   pygame.quit()
   </code></pre>
 </div>
 
 <div id="feladatok" class="tabcontent">
-  <b>1. Feladat</b><br />
-  Fejleszd tovább a videóban bemutatott - és a Példák részben letölthető - kódot
-  úgy, hogy a madár ne repüljön ki a képernyő jobb oldalán!
-
+  <b>1.1 Feladat</b><br />
+  Fejleszd tovább a videó 2. részében bemutatott - és a Példáknál gyakorlati
+  példaként megnevezett - kódot úgy, hogy mind a három feliratnak eltérő
+  jellemzői (betűtípus, -szín, -méret) legyenek oldalán!
+  <br /><br />
+  <hr />
+  <b>1.2 Feladat</b><br />
+  Fejleszd tovább a kódot úgy, hogy csak SPACE gomb lenyomása esetén növekedjen
+  a pontszám!
   <br /><br />
 </div>
