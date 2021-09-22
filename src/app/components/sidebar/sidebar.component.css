@@ -167,8 +167,8 @@ input:checked + i .slider:before {
 }
 
 .badge-primary {
-  color: #1e415d;
-  background-color: #ffdc53;
+  color: var(--g-bg-secondary);
+  border: var(--g-bg-secondary) 1px solid;
 }
 
 .badge-secondary {
