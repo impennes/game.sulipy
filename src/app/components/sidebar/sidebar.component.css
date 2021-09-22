@@ -38,6 +38,9 @@ a.active {
 .menu-head {
   color: var(--g-txt-1);
 }
+.menu-head-soon {
+  color: var(--g-txt-1);
+}
 a.active .menu-head {
   color: var(--g-bg);
 }
