@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/EFNANHiqeNs"
+        src="https://www.youtube.com/embed/FjV1JpaeEC0"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -60,29 +60,79 @@
 </div>
 
 <div id="peldak" class="tabcontent">
+  <div class="source-code-box">
+    <a href="https://sulipy.hu//depo/source_code/game/3.3.zip"
+      ><button class="source-code">forrásfájlok letöltése</button></a
+    >
+  </div>
+
+  Mosue input figyelésének két lehetősége
   <pre><code class="language-python">
   import pygame
 
-  WIDTH, HEIGHT = 800, 400
-  BG_COLOR = (140, 137, 246)
-  BIRD_SPEED = 5
-  
   pygame.init()
-  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  screen = pygame.display.set_mode((600, 300))
   clock = pygame.time.Clock()
-  bird_surf = pygame.image.load('img/bird1.png').convert_alpha()
-  bird_x = 0
-  bird_y = 200
   
   running = True
   while running:
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
               running = False
+          # mouse with event loop
+          # if event.type == pygame.MOUSEMOTION:
+          #     print(event.pos)
+          # if event.type == pygame.MOUSEBUTTONDOWN:
+          #     print('az egér gombja lenyomva')
   
-      screen.fill(BG_COLOR)
-      bird_x += BIRD_SPEED
-      screen.blit(bird_surf, (bird_x, bird_y))
+      # pygame.mouse
+      print('az egér pozíciója', pygame.mouse.get_pos())
+      print('az egér gombja lenyomva', pygame.mouse.get_pressed())
+      pygame.display.update()
+      clock.tick(1)
+  
+  pygame.quit()
+  </code></pre>
+  <br /><br />
+  Lufik célkeresztben
+  <pre><code class="language-python">
+  import pygame
+  import random
+  
+  WIDTH = 1280
+  HEIGHT = 620
+  
+  pygame.init()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  ballon_surf = pygame.image.load('img/ballon.png')
+  ballons_rect = []
+  for _ in range(5):
+      ballon_rect = ballon_surf.get_rect(center=(random.randint(50, WIDTH - 50), random.randint(50, HEIGHT - 50)))
+      ballons_rect.append(ballon_rect)
+  
+  crosshair_surf = pygame.image.load('img/crosshair.png')
+  crosshair_rect = crosshair_surf.get_rect(center=(WIDTH / 2, HEIGHT / 2))
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+          if event.type == pygame.MOUSEMOTION:
+              crosshair_rect = crosshair_surf.get_rect(center=(event.pos))
+          if event.type == pygame.MOUSEBUTTONDOWN:
+              for index, ballon_rect in enumerate(ballons_rect):
+                  if ballon_rect.collidepoint(event.pos):
+                      del ballons_rect[index]
+  
+      screen.fill((140, 137, 246))
+  
+      for ballon_rect in ballons_rect:
+          screen.blit(ballon_surf, ballon_rect)
+      screen.blit(crosshair_surf, crosshair_rect)
+  
       pygame.display.update()
       clock.tick(60)
   
@@ -93,7 +143,11 @@
 <div id="feladatok" class="tabcontent">
   <b>1. Feladat</b><br />
   Fejleszd tovább a videóban bemutatott - és a Példák részben letölthető - kódot
-  úgy, hogy a madár ne repüljön ki a képernyő jobb oldalán!
-
+  úgy, hogy hogy a lufik lassan emelkedjenek és kis mértékben oldalra is
+  mozogjanak, illetve amikor elhagyják a játékablakot, akkor törlődjenek a
+  listából!
   <br /><br />
+  <hr />
+  <b>2. Feladat</b><br />
+  Fejleszd tovább úgy a kódot, hogy különböző színű lufik jelenjenek meg!
 </div>
