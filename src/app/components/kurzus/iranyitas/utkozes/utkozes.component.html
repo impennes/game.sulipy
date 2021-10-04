@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/B5rYfEgkI04"
+        src="https://www.youtube.com/embed/WnE9n4ntPHA"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -77,8 +77,8 @@
   screen = pygame.display.set_mode((WIDTH, HEIGHT))
   clock = pygame.time.Clock()
   
-  ballon = pygame.image.load('img/ballon.png').convert_alpha()
-  ballon_rect = ballon.get_rect(center=(WIDTH - 100, HEIGHT / 2))
+  balloon_surf = pygame.image.load('img/balloon.png').convert_alpha()
+  balloon_rect = balloon_surf.get_rect(center=(WIDTH - 100, HEIGHT / 2))
   
   bird_fw_1 = pygame.image.load('img/bird1.png').convert_alpha()
   bird_fw_2 = pygame.image.load('img/bird2.png').convert_alpha()
@@ -94,6 +94,7 @@
   bird_x = WIDTH / 2
   bird_y = HEIGHT / 2
   bird_index = 0
+  bird_rect = birds_fw[bird_index].get_rect(center=(bird_x, bird_y))
   
   collision = False
   counter = 0
@@ -118,8 +119,6 @@
           bird_y += SPEED
   
       screen.fill((140, 137, 246))
-      if not collision:
-          screen.blit(ballon, ballon_rect)
   
       counter += 1
       if counter % 7 == 0:
@@ -134,13 +133,16 @@
           bird_rect = birds_b[bird_index].get_rect(center=(bird_x, bird_y))
           screen.blit(birds_b[bird_index], bird_rect)
   
-      if ballon_rect.colliderect(bird_rect):
+      if balloon_rect.colliderect(bird_rect):
           collision = True
+  
+      if not collision:
+          screen.blit(balloon_surf, balloon_rect)
   
       pygame.display.update()
       clock.tick(60)
   
-  pygame.quit()
+  pygame.quit()    
   </code></pre>
   <br /><br />
   Madár és az 5 lufi
@@ -156,12 +158,11 @@
   screen = pygame.display.set_mode((WIDTH, HEIGHT))
   clock = pygame.time.Clock()
   
-  ballon = pygame.image.load('img/ballon.png').convert_alpha()
-  ballons_rect = []
+  balloon_surf = pygame.image.load('img/balloon.png').convert_alpha()
+  balloons_rect = []
   for _ in range(5):
-      ballon_rect = ballon.get_rect(center=(random.randint(50, WIDTH - 50), 
-          random.randint(50, HEIGHT - 50)))
-      ballons_rect.append(ballon_rect)
+      balloon_rect = balloon_surf.get_rect(center=(random.randint(50, WIDTH - 50), random.randint(50, HEIGHT - 50)))
+      balloons_rect.append(balloon_rect)
   
   bird_fw_1 = pygame.image.load('img/bird1.png').convert_alpha()
   bird_fw_2 = pygame.image.load('img/bird2.png').convert_alpha()
@@ -177,6 +178,7 @@
   bird_x = WIDTH / 2
   bird_y = HEIGHT / 2
   bird_index = 0
+  bird_rect = birds_fw[bird_index].get_rect(center=(bird_x, bird_y))
   
   counter = 0
   forward = True
@@ -214,19 +216,17 @@
           bird_rect = birds_b[bird_index].get_rect(center=(bird_x, bird_y))
           screen.blit(birds_b[bird_index], bird_rect)
   
-      for index, ballon_rect in enumerate(ballons_rect):
-          if ballon_rect.colliderect(bird_rect):
-              del ballons_rect[index]
+      for index, balloon_rect in enumerate(balloons_rect):
+          if balloon_rect.colliderect(bird_rect):
+              del balloons_rect[index]
           else:
-              screen.blit(ballon, ballon_rect)
+              screen.blit(balloon_surf, balloon_rect)
   
       pygame.display.update()
       clock.tick(60)
-    
-    pygame.quit()
-    </code></pre>
-  Bár ezen fejezet videóiban a képek betöltésekor nem használtam a
-  .convert_alpha() metódust, de azért természetesen ennek használata javasolt!
+  
+  pygame.quit()
+  </code></pre>
 </div>
 
 <div id="feladatok" class="tabcontent">
@@ -240,4 +240,9 @@
   Fejleszd tovább az előző kódot úgy, hogy a lufik kis mértékben oldalra is
   mozogjanak, illetve amikor elhagyják a játékablakot, akkor törlődjenek a
   listából!
+  <hr />
+  <br /><br />
+  <b>2. Feladat</b><br />
+  Fejleszd tovább az előző kódot úgy, hogy legyenek lassan mozgó felhők is a
+  játékablakban, ezek esetében természetesen az ütközést nem vizsgáljuk!
 </div>
