@@ -10,7 +10,7 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/FjV1JpaeEC0"
+        src="https://www.youtube.com/embed/D2nf-EBVIKU"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -88,10 +88,12 @@
       # pygame.mouse
       print('az egér pozíciója', pygame.mouse.get_pos())
       print('az egér gombja lenyomva', pygame.mouse.get_pressed())
+      print(pygame.mouse.get_pressed()[0])
+  
       pygame.display.update()
       clock.tick(1)
   
-  pygame.quit()
+  pygame.quit()    
   </code></pre>
   <br /><br />
   Lufik célkeresztben
@@ -106,11 +108,11 @@
   screen = pygame.display.set_mode((WIDTH, HEIGHT))
   clock = pygame.time.Clock()
   
-  ballon_surf = pygame.image.load('img/ballon.png').convert_alpha()
-  ballons_rect = []
+  balloon_surf = pygame.image.load('img/balloon.png').convert_alpha()
+  balloons_rect = []
   for _ in range(5):
-      ballon_rect = ballon_surf.get_rect(center=(random.randint(50, WIDTH - 50), random.randint(50, HEIGHT - 50)))
-      ballons_rect.append(ballon_rect)
+      balloon_rect = balloon_surf.get_rect(center=(random.randint(50, WIDTH - 50), random.randint(50, HEIGHT - 50)))
+      balloons_rect.append(balloon_rect)
   
   crosshair_surf = pygame.image.load('img/crosshair.png').convert_alpha()
   crosshair_rect = crosshair_surf.get_rect(center=(WIDTH / 2, HEIGHT / 2))
@@ -121,25 +123,23 @@
           if event.type == pygame.QUIT:
               running = False
           if event.type == pygame.MOUSEMOTION:
-              crosshair_rect = crosshair_surf.get_rect(center=(event.pos))
+              crosshair_rect = crosshair_surf.get_rect(center=event.pos)
           if event.type == pygame.MOUSEBUTTONDOWN:
-              for index, ballon_rect in enumerate(ballons_rect):
-                  if ballon_rect.collidepoint(event.pos):
-                      del ballons_rect[index]
+              for index, balloon_rect in enumerate(balloons_rect):
+                  if balloon_rect.collidepoint(event.pos):
+                      del balloons_rect[index]
   
       screen.fill((140, 137, 246))
   
-      for ballon_rect in ballons_rect:
-          screen.blit(ballon_surf, ballon_rect)
+      for balloon_rect in balloons_rect:
+          screen.blit(balloon_surf, balloon_rect)
       screen.blit(crosshair_surf, crosshair_rect)
   
       pygame.display.update()
       clock.tick(60)
   
-  pygame.quit()
+  pygame.quit()    
   </code></pre>
-  Bár ezen fejezet videóiban a képek betöltésekor nem használtam a
-  .convert_alpha() metódust, de azért természetesen ennek használata javasolt!
 </div>
 
 <div id="feladatok" class="tabcontent">
