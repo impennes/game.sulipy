@@ -42,6 +42,10 @@ import { IranyitasInfoComponent } from './components/kurzus/iranyitas/iranyitas-
 import { BillentyuzetComponent } from './components/kurzus/iranyitas/billentyuzet/billentyuzet.component';
 import { UtkozesComponent } from './components/kurzus/iranyitas/utkozes/utkozes.component';
 import { EgerComponent } from './components/kurzus/iranyitas/eger/eger.component';
+import { Game01InfoComponent } from './components/kurzus/game01/game01-info/game01-info.component';
+import { Balloon01Component } from './components/kurzus/game01/balloon01/balloon01.component';
+import { Balloon02Component } from './components/kurzus/game01/balloon02/balloon02.component';
+import { Balloon03Component } from './components/kurzus/game01/balloon03/balloon03.component';
 
 const routes: Routes = [
   {
@@ -121,6 +125,22 @@ const routes: Routes = [
     component: EgerComponent,
   },
   {
+    path: 'balloon',
+    component: Game01InfoComponent,
+  },
+  {
+    path: 'balloon/balloon01',
+    component: Balloon01Component,
+  },
+  {
+    path: 'balloon/balloon02',
+    component: Balloon02Component,
+  },
+  {
+    path: 'balloon/balloon03',
+    component: Balloon03Component,
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
@@ -182,6 +202,10 @@ const routes: Routes = [
     BillentyuzetComponent,
     UtkozesComponent,
     EgerComponent,
+    Game01InfoComponent,
+    Balloon01Component,
+    Balloon02Component,
+    Balloon03Component,
   ],
   imports: [
     BrowserModule,

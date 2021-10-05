@@ -1,0 +1,229 @@
+<div class="submenu-title">Nem aktív játékállapot</div>
+<app-gombsor3 (messageEvent)="receiveMessage($event)"></app-gombsor3>
+
+<div id="video" class="tabcontent">
+  <div id="ytube">
+    <div
+      class="embed-responsive embed-responsive-16by9"
+      style="max-width: 560px"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/S5fDlS7vesk"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <div class="space"></div>
+  <a href="https://opengameart.org/" target="_blank"
+    ><div class="link-container">
+      <div class="icon">
+        <img src="./../../../assets/images/g-flag.svg" alt="" />
+      </div>
+      <div class="description">
+        <b>OpenGameArt</b> <br />
+        Egy honlap, amely különböző felhasználási feltételekkel biztosít
+        ingyenesen letölthető képcsomagokat (háttér, karakter, egyéb játékelemek
+        ...), hanganyagokat.
+      </div>
+    </div></a
+  >
+
+  <a href="https://kenney.nl/assets?q=2d" target="_blank"
+    ><div class="link-container">
+      <div class="icon">
+        <img src="./../../../assets/images/g-flag.svg" alt="" />
+      </div>
+      <div class="description">
+        <b>Kenney</b> <br />
+        Egy honlap, amely ingyenesen kínál 2D és 3D képcsomagokat,
+        hanganyagokat.
+      </div>
+    </div></a
+  >
+
+  <a href="https://www.gameart2d.com/freebies.html" target="_blank"
+    ><div class="link-container">
+      <div class="icon">
+        <img src="./../../../assets/images/g-flag.svg" alt="" />
+      </div>
+      <div class="description">
+        <b>Game Art 2d</b> <br />
+        Egy honlap, amely ingyenesen is kínál 2D képcsomagokat.
+      </div>
+    </div></a
+  >
+</div>
+
+<div id="peldak" class="tabcontent">
+  <div class="source-code-box">
+    <a href="https://sulipy.hu//depo/source_code/game/3.1.zip"
+      ><button class="source-code">Forrásfájlok letöltése</button></a
+    >
+  </div>
+
+  Keyboard input megvalósítása
+  <pre><code class="language-python">
+  import pygame
+
+  WIDTH, HEIGHT = 600, 300
+  
+  pygame.init()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+          # keyboard input with event loop
+          # if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+          #     print('SPACE DOWN')
+  
+      # keyboard input with pygame.key
+      # print(pygame.key.get_pressed())
+      keys = pygame.key.get_pressed()
+      if keys[pygame.K_SPACE]:
+          print(keys[pygame.K_SPACE])
+  
+      pygame.display.update()
+      clock.tick(1)
+  
+  pygame.quit()
+  </code></pre>
+  <br /><br />
+  Madár mozgásának irányítása nyilakkal
+  <pre><code class="language-python">
+  import pygame
+
+  WIDTH = 1280
+  HEIGHT = 620
+  SPEED = 5
+  
+  pygame.init()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  bird = pygame.image.load('img/bird1.png').convert_alpha()
+  bird_x = WIDTH / 2
+  bird_y = HEIGHT / 2
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+  
+      keys = pygame.key.get_pressed()
+      if keys[pygame.K_RIGHT] and bird_rect.right <= WIDTH:
+          bird = pygame.image.load('img/bird1.png')
+          bird_x += SPEED
+      elif keys[pygame.K_LEFT] and bird_rect.left >= 0:
+          bird = pygame.image.load('img/bird1back.png')
+          bird_x -= SPEED
+  
+      if keys[pygame.K_UP] and bird_rect.top >= 0:
+          bird_y -= SPEED
+      elif keys[pygame.K_DOWN] and bird_rect.bottom <= HEIGHT:
+          bird_y += SPEED
+  
+  
+      screen.fill((140, 137, 246))
+      bird_rect = bird.get_rect(center=(bird_x, bird_y))
+      screen.blit(bird, bird_rect)
+  
+      pygame.display.update()
+      clock.tick(60)
+  
+  pygame.quit()
+  </code></pre>
+  <br /><br />
+  Madár mozgásának irányítása nyilakkal + animált mozgás
+  <pre><code class="language-python">
+  import pygame
+
+  WIDTH = 1280
+  HEIGHT = 620
+  SPEED = 5
+  
+  pygame.init()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  clock = pygame.time.Clock()
+  
+  bird_fw_1 = pygame.image.load('img/bird1.png').convert_alpha()
+  bird_fw_2 = pygame.image.load('img/bird2.png').convert_alpha()
+  bird_fw_3 = pygame.image.load('img/bird3.png').convert_alpha()
+  bird_fw_4 = pygame.image.load('img/bird4.png').convert_alpha()
+  birds_fw = [bird_fw_1, bird_fw_2, bird_fw_3, bird_fw_4]
+  bird_b_1 = pygame.image.load('img/bird1back.png').convert_alpha()
+  bird_b_2 = pygame.image.load('img/bird2back.png').convert_alpha()
+  bird_b_3 = pygame.image.load('img/bird3back.png').convert_alpha()
+  bird_b_4 = pygame.image.load('img/bird4back.png').convert_alpha()
+  birds_b = [bird_b_1, bird_b_2, bird_b_3, bird_b_4]
+  
+  bird_x = WIDTH / 2
+  bird_y = HEIGHT / 2
+  bird_index = 0
+  
+  counter = 0
+  forward = True
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+  
+      keys = pygame.key.get_pressed()
+      if keys[pygame.K_RIGHT] and bird_rect.right <= WIDTH:
+          forward = True
+          bird_x += SPEED
+      elif keys[pygame.K_LEFT] and bird_rect.left >= 0:
+          forward = False
+          bird_x -= SPEED
+  
+      if keys[pygame.K_UP] and bird_rect.top >= 0:
+          bird_y -= SPEED
+      elif keys[pygame.K_DOWN] and bird_rect.bottom <= HEIGHT:
+          bird_y += SPEED
+  
+      screen.fill((140, 137, 246))
+  
+      counter += 1
+      if counter % 7 == 0:
+          bird_index += 1
+      if bird_index > len(birds_fw) - 1:
+          bird_index = 0
+  
+      if forward:
+          bird_rect = birds_fw[bird_index].get_rect(center=(bird_x, bird_y))
+          screen.blit(birds_fw[bird_index], bird_rect)
+      else:
+          bird_rect = birds_b[bird_index].get_rect(center=(bird_x, bird_y))
+          screen.blit(birds_b[bird_index], bird_rect)
+  
+      pygame.display.update()
+      clock.tick(60)
+  
+  pygame.quit()
+  </code></pre>
+  Bár ebben a videóban a képek betöltésekor nem használtam a .convert_alpha()
+  metódust, de azért természetesen ennek használata javasolt, így a fenti kódot
+  már kiegészítettem ezzel!
+</div>
+
+<div id="feladatok" class="tabcontent">
+  <b>1.1 Feladat</b><br />
+  Fejleszd tovább a videóban bemutatott - és a Példák részben letölthető -
+  harmadik program kódját úgy, háttérként helyezz el véletlen pozíciójú felhőket
+  az égen!
+  <br /><br />
+  <hr />
+  <b>1.2 Feladat</b><br />
+  További fejlesztés lehet, ha a felhők ha lassan "úsznak" az égen.
+  <br /><br />
+</div>
