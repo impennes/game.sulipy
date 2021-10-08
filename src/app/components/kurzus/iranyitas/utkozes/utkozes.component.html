@@ -161,7 +161,8 @@
   balloon_surf = pygame.image.load('img/balloon.png').convert_alpha()
   balloons_rect = []
   for _ in range(5):
-      balloon_rect = balloon_surf.get_rect(center=(random.randint(50, WIDTH - 50), random.randint(50, HEIGHT - 50)))
+      balloon_rect = balloon_surf.get_rect(
+          center=(random.randint(50, WIDTH - 50), random.randint(50, HEIGHT - 50)))
       balloons_rect.append(balloon_rect)
   
   bird_fw_1 = pygame.image.load('img/bird1.png').convert_alpha()
