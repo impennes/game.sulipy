@@ -46,6 +46,11 @@ import { Game01InfoComponent } from './components/kurzus/game01/game01-info/game
 import { Balloon01Component } from './components/kurzus/game01/balloon01/balloon01.component';
 import { Balloon02Component } from './components/kurzus/game01/balloon02/balloon02.component';
 import { Balloon03Component } from './components/kurzus/game01/balloon03/balloon03.component';
+import { OopInfoComponent } from './components/kurzus/oop/oop-info/oop-info.component';
+import { SpriteComponent } from './components/kurzus/oop/sprite/sprite.component';
+import { SpritecollideComponent } from './components/kurzus/oop/spritecollide/spritecollide.component';
+import { UgrasComponent } from './components/kurzus/oop/ugras/ugras.component';
+import { TovabbiFunkciokComponent } from './components/kurzus/oop/tovabbi-funkciok/tovabbi-funkciok.component';
 
 const routes: Routes = [
   {
@@ -141,6 +146,26 @@ const routes: Routes = [
     component: Balloon03Component,
   },
   {
+    path: 'oop',
+    component: OopInfoComponent,
+  },
+  {
+    path: 'oop/sprite',
+    component: SpriteComponent,
+  },
+  {
+    path: 'oop/spritecollide',
+    component: SpritecollideComponent,
+  },
+  {
+    path: 'oop/ugras',
+    component: UgrasComponent,
+  },
+  {
+    path: 'oop/tovabbi_funkciok',
+    component: TovabbiFunkciokComponent,
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
@@ -206,6 +231,11 @@ const routes: Routes = [
     Balloon01Component,
     Balloon02Component,
     Balloon03Component,
+    OopInfoComponent,
+    SpriteComponent,
+    SpritecollideComponent,
+    UgrasComponent,
+    TovabbiFunkciokComponent,
   ],
   imports: [
     BrowserModule,
