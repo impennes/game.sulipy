@@ -1,0 +1,13 @@
+.space {
+  min-height: 50px;
+}
+
+.link-container {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 30px;
+}
