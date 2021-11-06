@@ -106,6 +106,31 @@
   a képernyő két széle között mindig a megfelelő irányba nézve!
 
   <br /><br />
+  <br /><br /><br />
+  <div id="plan">
+    <img src="../../../../../assets/images/Fly_2.png" alt="" />
+  </div>
+  <b>2. Feladat - Plan</b><br />
+  A letölthető mappában lévő repülőgépek közül válassz egyet, és ez mozgjon a
+  játékablakan balról jobbra! Amikor a repülőgép eléri a képernyő valemelyik
+  szélét, forduljon meg, és repüljön az ellenkező irányba!
+  <br /><br />
+  <div class="source-code-box">
+    <a href="https://sulipy.hu//depo/source_code/game/2_Plane.zip"
+      ><button class="source-code">Forrásfájlok letöltése</button></a
+    >
+  </div>
+  <div class="tipp">
+    <h4>Tipp: Képek tükrözése</h4>
+    a, valamilyen képszerkesztő programmal (pl. IrfanView, Gimp, Figma) vagy
+    <br />
+    b, kódban:
+    <span>pygame.transform.flip(surface, x_bool, y_bool)</span>
+    <pre><code class="language-python">
+plan_surf = pygame.image.load('img/plan.png').convert_alpha()
+plan_surf = pygame.transform.flip(plan_surf, True, False)
+  </code></pre>
+  </div>
 
   <br /><br /><br />
 </div>

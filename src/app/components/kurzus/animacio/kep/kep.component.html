@@ -100,5 +100,38 @@
   Fejleszd tovább a videóban bemutatott - és a Példák részben letölthető - kódot
   úgy, hogy a madár ne repüljön ki a képernyő jobb oldalán!
 
+  <br /><br /><br />
+  <div id="plan">
+    <img src="../../../../../assets/images/Fly_2.png" alt="" />
+  </div>
+  <b>2.1 Feladat - Plan</b><br />
+  A letölthető mappában lévő repülőgépek közül válassz egyet, és ez mozgjon a
+  játékablakan balról jobbra! A repülőgép ne tudja elhagyni a játékablakot!
   <br /><br />
+  <b>2.2 Feladat - Plan</b><br />
+  Módosítsd úgy a programot, hogy amint a repülőgép elhagyja a játékablakot a
+  jobb szélen, repüljön be újra a képernyő bal oldalán!
+  <br /><br />
+  <b>2.3 Feladat - Plan</b><br />
+  A letölthető fájlok között találsz egy háttérképet is. Töltsd be azt is!
+  <br /><br />
+  <div class="source-code-box">
+    <a href="https://sulipy.hu//depo/source_code/game/2_Plane.zip"
+      ><button class="source-code">Forrásfájlok letöltése</button></a
+    >
+  </div>
+  <div class="tipp">
+    <h4>Tipp: Képek átméretezése</h4>
+    a, valamilyen képszerkesztő programmal (pl. IrfanView, Gimp, Figma) vagy
+    <br />
+    b, kódban:
+    <span
+      >pygame.transform.rotozoom(surface, forgatasi_szog,
+      nagyitas_merteke)</span
+    >
+    <pre><code class="language-python">
+plan_surf = pygame.image.load('img/plan.png').convert_alpha()
+plan_surf = pygame.transform.rotozoom(plan_surf, 0, 0.7)
+  </code></pre>
+  </div>
 </div>
