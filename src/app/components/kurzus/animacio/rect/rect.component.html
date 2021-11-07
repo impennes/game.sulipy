@@ -86,6 +86,8 @@
       elif bird_rect.right == WIDTH:
           bird_forward = False
           bird_surf = pygame.image.load('img/bird1back.png').convert_alpha()
+          # A kép tükrözése a kódban is lehetséges (lásd a Példák részben):
+          # bird_surf = pygame.transform.flip(bird_surf, True, False)
           bird_rect = bird_surf.get_rect(midright=(WIDTH - 1, HEIGHT / 2))
       else:
           bird_rect.left -= BIRD_SPEED
