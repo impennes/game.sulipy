@@ -1,0 +1,137 @@
+<div class="submenu-title">Pálya létrehozása</div>
+<app-gombsor3 (messageEvent)="receiveMessage($event)"></app-gombsor3>
+
+<div id="video" class="tabcontent">
+  <div id="ytube">
+    <div
+      class="embed-responsive embed-responsive-16by9"
+      style="max-width: 560px"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/QU6dVXpO_xM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="peldak" class="tabcontent">
+  <div class="source-code-box">
+    <a href="https://sulipy.hu//depo/source_code/game/6.1.zip"
+      ><button class="source-code">A teljes kód letöltése</button></a
+    >
+  </div>
+  main.py
+  <pre><code class="language-python">
+  import pygame
+  from settings import screen_width, screen_height, level_map
+  from level import Level
+  
+  pygame.init()
+  screen = pygame.display.set_mode((screen_width, screen_height))
+  clock = pygame.time.Clock()
+  
+  level = Level(level_map, screen)
+  bg_surf = pygame.image.load('../img/BG.png').convert_alpha()
+  bg_rect = bg_surf.get_rect(bottomleft=(0, screen_height))
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+  
+      screen.blit(bg_surf, bg_rect)
+      level.run()
+  
+      pygame.display.update()
+      clock.tick(60)
+  
+  pygame.quit()
+      
+  </code></pre>
+  <br /><br />
+  settings.py
+  <pre><code class="language-python">
+  level_map = [
+  '                            ',
+  '                            ',
+  '                            ',
+  '          np                ',
+  '                            ',
+  '     noop                   ',
+  '                            ',
+  'op           noop           ',
+  '                            ',
+  'bbbbbbc    abbc   ac  abc   ',
+  'eeeeeef   aheejc  df  dejc  ']
+  
+  tile_size = 64
+  
+  screen_width = 1200
+  screen_height = len(level_map) * tile_size  
+  </code></pre>
+  <br /><br />
+  level.py
+  <pre><code class="language-python">
+  import pygame
+  from settings import tile_size
+  from tiles import TerrainTile
+  
+  
+  class Level:
+      def __init__(self, level_data, surface):
+          self.display_surface = surface
+          self.terrain_tiles = pygame.sprite.Group()
+          self.setup_level(level_data)
+  
+      def setup_level(self, layout):
+          for row_index, row in enumerate(layout):
+              for col_index, tile_type in enumerate(row):
+                  x = col_index * tile_size
+                  y = row_index * tile_size
+                  if tile_type != ' ':
+                      tile = TerrainTile(tile_size, x, y, tile_type)
+                      self.terrain_tiles.add(tile)
+  
+      def run(self):
+          self.terrain_tiles.draw(self.display_surface)
+      
+  </code></pre>
+  <br /><br />
+  tiles.py
+  <pre><code class="language-python">
+  import pygame
+
+
+  class Tile(pygame.sprite.Sprite):
+      def __init__(self, size, x, y):
+          super().__init__()
+          self.image = pygame.Surface((size, size))
+          self.rect = self.image.get_rect(topleft=(x, y))
+  
+  
+  class TerrainTile(Tile):
+      def __init__(self, size, x, y, terrain_type):
+          super().__init__(size, x, y)
+          self.image = pygame.image.load(f'../img/terrain/&#123;terrain_type&#125;.png').convert_alpha()  
+  </code></pre>
+  <br /><br />
+</div>
+
+<div id="feladatok" class="tabcontent">
+  <b>1. Feladat</b><br />
+  Fejleszd tovább a videóban bemutatott - és a Példák részben letölthető - kódot
+  úgy, hogy a karakter lefelé és felfelé is tudjon mozogni a játékablakban!
+  <br /><br />
+  <hr />
+  <b>2. Feladat</b><br />
+  Fejleszd tovább úgy a kódot, hogy a mozgása animált legyen! Az egyes
+  mozgásfázisokhoz tartozó képek letölthetőek a Példák részben a Forrásfájlok
+  gombra kattintva!
+</div>

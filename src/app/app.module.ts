@@ -51,6 +51,11 @@ import { SpriteComponent } from './components/kurzus/oop/sprite/sprite.component
 import { SpritecollideComponent } from './components/kurzus/oop/spritecollide/spritecollide.component';
 import { UgrasComponent } from './components/kurzus/oop/ugras/ugras.component';
 import { TovabbiFunkciokComponent } from './components/kurzus/oop/tovabbi-funkciok/tovabbi-funkciok.component';
+import { PlatformjatekInfoComponent } from './components/kurzus/platformjatek/platformjatek-info/platformjatek-info.component';
+import { PalyaComponent } from './components/kurzus/platformjatek/palya/palya.component';
+import { JatekosComponent } from './components/kurzus/platformjatek/jatekos/jatekos.component';
+import { ScrollComponent } from './components/kurzus/platformjatek/scroll/scroll.component';
+import { JatekosAnimacioComponent } from './components/kurzus/platformjatek/jatekos-animacio/jatekos-animacio.component';
 
 const routes: Routes = [
   {
@@ -166,6 +171,26 @@ const routes: Routes = [
     component: TovabbiFunkciokComponent,
   },
   {
+    path: 'platformjatek',
+    component: PlatformjatekInfoComponent,
+  },
+  {
+    path: 'platformjatek/palya',
+    component: PalyaComponent,
+  },
+  {
+    path: 'platformjatek/jatekos',
+    component: JatekosComponent,
+  },
+  {
+    path: 'platformjatek/scroll',
+    component: ScrollComponent,
+  },
+  {
+    path: 'platformjatek/jatekos_animacio',
+    component: JatekosAnimacioComponent,
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
@@ -236,6 +261,11 @@ const routes: Routes = [
     SpritecollideComponent,
     UgrasComponent,
     TovabbiFunkciokComponent,
+    PlatformjatekInfoComponent,
+    PalyaComponent,
+    JatekosComponent,
+    ScrollComponent,
+    JatekosAnimacioComponent,
   ],
   imports: [
     BrowserModule,

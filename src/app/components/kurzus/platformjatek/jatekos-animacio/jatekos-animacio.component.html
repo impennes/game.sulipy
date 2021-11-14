@@ -1,0 +1,96 @@
+<div class="submenu-title">Játékos mozgásának animálása</div>
+<app-gombsor3 (messageEvent)="receiveMessage($event)"></app-gombsor3>
+
+<div id="video" class="tabcontent">
+  <div id="ytube">
+    <div
+      class="embed-responsive embed-responsive-16by9"
+      style="max-width: 560px"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/fadnvTm-764"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="peldak" class="tabcontent">
+  <div class="source-code-box">
+    <a href="https://sulipy.hu//depo/source_code/game/5.1.zip"
+      ><button class="source-code">forrásfájlok letöltése</button></a
+    >
+  </div>
+
+  <pre><code class="language-python">
+  import pygame
+
+  WIDTH = 1280
+  HEIGHT = 620
+  BG_COLOR = (255, 255, 255)
+  
+  
+  class Ninja(pygame.sprite.Sprite):
+      def __init__(self):
+          super().__init__()
+          self.image = pygame.image.load('img/Idle__000 1.png').convert_alpha()
+          self.rect = self.image.get_rect(midbottom=(WIDTH/2, HEIGHT-100))
+          self.speed = 5
+  
+      def ninja_input(self):
+          keys = pygame.key.get_pressed()
+          if keys[pygame.K_RIGHT] and self.rect.right < WIDTH:
+              self.x_movement(self.speed)
+          if keys[pygame.K_LEFT] and self.rect.left > 0:
+              self.x_movement(-self.speed)
+  
+      def x_movement(self, dx):
+          self.rect.x += dx
+  
+      def update(self):
+          self.ninja_input()
+  
+  
+  pygame.init()
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  pygame.display.set_caption('Fruit Ninja')
+  clock = pygame.time.Clock()
+  
+  ninja = pygame.sprite.GroupSingle()
+  ninja.add(Ninja())
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+  
+      screen.fill(BG_COLOR)
+  
+      ninja.draw(screen)
+      ninja.update()
+  
+      pygame.display.update()
+      clock.tick(60)
+  
+  pygame.quit()   
+  </code></pre>
+  <br /><br />
+</div>
+
+<div id="feladatok" class="tabcontent">
+  <b>1. Feladat</b><br />
+  Fejleszd tovább a videóban bemutatott - és a Példák részben letölthető - kódot
+  úgy, hogy a karakter lefelé és felfelé is tudjon mozogni a játékablakban!
+  <br /><br />
+  <hr />
+  <b>2. Feladat</b><br />
+  Fejleszd tovább úgy a kódot, hogy a mozgása animált legyen! Az egyes
+  mozgásfázisokhoz tartozó képek letölthetőek a Példák részben a Forrásfájlok
+  gombra kattintva!
+</div>
