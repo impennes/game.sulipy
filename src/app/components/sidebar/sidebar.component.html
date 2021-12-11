@@ -225,11 +225,6 @@
             >Ugrás képessége</a
           >
         </li>
-        <!-- <li style="margin-left: 10px">
-          További funkciók<i class="badge badge-primary badge-pill"
-            >hamarosan
-          </i>
-        </li> -->
         <li>
           <a
             routerLink="/oop/tovabbi_funkciok"
@@ -241,18 +236,20 @@
       </ul>
     </li>
 
-    <li>
+    <!-- <li>
       <div class="menu-head-soon" style="margin-left: 10px">
         6. Platformjáték<i class="badge badge-primary badge-pill">hamarosan </i>
       </div>
-    </li>
-    <!-- <li>
+    </li> -->
+    <li>
       <a
         routerLink="/platformjatek"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         ><div class="menu-head">
-          6. Platformjáték<span class="test fas fa-angle-right"></span></div
+          6. Platformjáték<i class="badge badge-primary badge-pill"
+            >Új fejezet! </i
+          ><span class="test fas fa-angle-right"></span></div
       ></a>
       <ul class="submenu">
         <li>
@@ -263,7 +260,12 @@
             >Pálya létrehozása</a
           >
         </li>
-        <li>
+        <li style="margin-left: 10px">
+          Játékos a pályán<i class="badge badge-primary badge-pill"
+            >hamarosan
+          </i>
+        </li>
+        <!-- <li>
           <a
             routerLink="/platformjatek/jatekos"
             routerLinkActive="active"
@@ -286,9 +288,9 @@
             [routerLinkActiveOptions]="{ exact: true }"
             >Játékos mozgásának animálása</a
           >
-        </li>
+        </li> -->
       </ul>
-    </li> -->
+    </li>
   </ul>
 </div>
 
