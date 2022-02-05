@@ -56,6 +56,7 @@ import { PalyaComponent } from './components/kurzus/platformjatek/palya/palya.co
 import { JatekosComponent } from './components/kurzus/platformjatek/jatekos/jatekos.component';
 import { ScrollComponent } from './components/kurzus/platformjatek/scroll/scroll.component';
 import { JatekosAnimacioComponent } from './components/kurzus/platformjatek/jatekos-animacio/jatekos-animacio.component';
+import { KiegeszitokComponent } from './components/kurzus/platformjatek/kiegeszitok/kiegeszitok.component';
 
 const routes: Routes = [
   {
@@ -191,6 +192,10 @@ const routes: Routes = [
     component: JatekosAnimacioComponent,
   },
   {
+    path: 'platformjatek/kiegeszito_elemek',
+    component: KiegeszitokComponent,
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
@@ -266,6 +271,7 @@ const routes: Routes = [
     JatekosComponent,
     ScrollComponent,
     JatekosAnimacioComponent,
+    KiegeszitokComponent,
   ],
   imports: [
     BrowserModule,
